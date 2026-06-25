@@ -1,13 +1,22 @@
 {
   "current": {
-    "course": "Laurel Park",
+    "course": "Desert Valley Resort",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
-    "start": "2026-06-19T16:00:00",
+    "start": "2026-06-25T02:32:59",
     "end": "2026-06-26T16:00:00",
     "deadline_text": "Friday, June 26th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-06-19",
+      "course": "Laurel Park",
+      "game": "Golden Tee Unplugged 2019",
+      "start": "2026-06-19T16:00:00",
+      "end": "2026-06-26T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-06-12",
       "course": "Alpine Run",
@@ -382,6 +391,7 @@
     }
   },
   "used_courses_2019": [
-    "Laurel Park"
+    "Laurel Park",
+    "Desert Valley Resort"
   ]
 }
