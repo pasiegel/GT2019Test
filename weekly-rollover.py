@@ -25,9 +25,20 @@ import urllib.error
 LEADERBOARD_FILE = "golden_tee_leaderboard.json"
 WEEKLY_FILE = "weekly_challenge.json"
 COURSES_FILE = "GT_2019_Courses.txt"
+COURSE_DATA_FILE = "course_data.json"
 LEADERBOARD_URL = "https://vpinhub.github.io/gt/#weekly"
 
 PLACE_EMOJI = {1: ":first_place:", 2: ":second_place:", 3: ":third_place:"}
+
+GENERIC_INTROS = [
+    "Attention GT Ballers! This week we're heading to {course} — study the layout, pick your lines, and post your best round before the deadline!",
+    "Attention GT Ballers! The next challenge is set: {course}. Step up, dial in your game, and show everyone what you've got!",
+    "Attention GT Ballers! This week's course is {course}. Time to grip it and rip it — good luck out there!",
+    "Attention GT Ballers! We're taking on {course} this week. Plan your round wisely and make every shot count!",
+    "Attention GT Ballers! {course} is on the board for this week's challenge. Lock in your best score before Friday!",
+    "Attention GT Ballers! This week we tackle {course}. Manage the course, avoid the trouble spots, and post that score!",
+    "Attention GT Ballers! It's time to hit the links at {course}. Bring your A-game and chase that top spot on the board!",
+]
 
 GENERIC_TIPS = [
     "Keep a close eye on the wind and manage your distances carefully on your approach shots to stay out of trouble and secure those birdies!",
@@ -178,7 +189,7 @@ def get_results_for_week(leaderboard, course, game_year, week_start_iso, week_en
     return results
 
 
-def build_discord_message(current, results, new_course, new_deadline_text, game_year):
+def build_discord_message(current, results, new_course, new_deadline_text, game_year, course_data=None):
     week_start_dt = datetime.fromisoformat(current["start"])
     week_date_str = f"{week_start_dt.strftime('%B')} {week_start_dt.day}, {week_start_dt.year}"
     course = current["course"]
@@ -224,17 +235,18 @@ def build_discord_message(current, results, new_course, new_deadline_text, game_
             )
 
     lines.append("")
+    cd = (course_data or {}).get(new_course, {})
+    course_intro = cd.get("intro", "").strip()
+    course_tip = cd.get("tip", "").strip()
+
     lines.append(f":deciduous_tree: NEW WEEKLY CHALLENGE: {new_course.upper()} :man_golfing:")
-    lines.append(
-        f"Attention GT Ballers! We are heading to the lush fairways for this week's challenge. "
-        f"Get ready to navigate the rolling greens, scenic hazards, and beautiful terrain of {new_course}!"
-    )
+    lines.append(course_intro if course_intro else random.choice(GENERIC_INTROS).format(course=new_course))
     lines.append("")
     lines.append(f":golf: Course:   {new_course}")
     lines.append(f":video_game: Game:     Golden Tee Unplugged {game_year}")
     lines.append(f":alarm_clock: Deadline: {new_deadline_text}")
     lines.append("")
-    lines.append(f"PRO-TIP: {random.choice(GENERIC_TIPS)}")
+    lines.append(f"PRO-TIP: {course_tip if course_tip else random.choice(GENERIC_TIPS)}")
     lines.append("")
     lines.append(":bar_chart: View the Live Leaderboard:")
     lines.append(LEADERBOARD_URL)
@@ -281,6 +293,16 @@ def update_standings(standings, results):
     return standings
 
 
+def load_course_data():
+    try:
+        with open(COURSE_DATA_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        # Strip the meta key
+        return {k: v for k, v in data.items() if not k.startswith("_")}
+    except FileNotFoundError:
+        return {}
+
+
 def main():
     dry_run = os.environ.get("DRY_RUN", "false").lower() == "true"
     if dry_run:
@@ -289,6 +311,7 @@ def main():
     weekly = load_json(WEEKLY_FILE)
     leaderboard = load_json(LEADERBOARD_FILE)
     all_courses = load_courses(COURSES_FILE)
+    course_data = load_course_data()
 
     current = weekly["current"]
     course = current["course"]
@@ -350,7 +373,7 @@ def main():
         "deadline_text": new_deadline_text,
     }
 
-    discord_message = build_discord_message(current, results, new_course, new_deadline_text, game_year)
+    discord_message = build_discord_message(current, results, new_course, new_deadline_text, game_year, course_data)
     print("\n=== DISCORD MESSAGE PREVIEW ===")
     print(discord_message)
     print("===============================\n")

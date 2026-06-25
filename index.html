@@ -404,12 +404,104 @@
         @media (max-width: 1024px) {
             .scorecard-video-grid { grid-template-columns: 1fr; }
         }
+
+        /* Hamburger button — hidden on desktop */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px 8px;
+            color: #fff;
+            font-size: 1.7em;
+            line-height: 1;
+            z-index: 1100;
+        }
+        .nav-close {
+            display: none;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: 2px solid var(--text-gray);
+            color: #fff;
+            font-size: 1.3em;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .mob-hide { display: revert; }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2em; }
-            .nav-menu { flex-direction: column; gap: 0.5rem; }
-            .game-tabs { flex-direction: column; }
-            table { font-size: 0.9em; }
-            th, td { padding: 0.5rem; }
+            /* --- Nav: hamburger overlay --- */
+            .hamburger { display: block; }
+            .nav-close { display: flex; }
+            .nav-menu {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.97);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1.6rem;
+                z-index: 1050;
+                list-style: none;
+            }
+            .nav-menu.open { display: flex; }
+            .nav-menu li { font-size: 1.2em; text-align: center; }
+            .nav-menu a { font-size: 1em; }
+            .nav-menu a::after { display: none; }
+
+            /* --- Hero --- */
+            .hero { padding: 2.75rem 1.25rem; }
+            .hero h1 { font-size: 1.9em; letter-spacing: 1px; }
+            .hero p { font-size: 1em; }
+
+            /* --- Stats: 2-column grid --- */
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .stat-card { padding: 1.25rem 0.75rem; }
+            .stat-card .stat-number { font-size: 2.2em; }
+            .stat-card.card-leader .stat-number { font-size: 1.15em; }
+
+            /* --- Spacing --- */
+            .section { padding: 2.25rem 0; }
+            .container { padding: 0 0.9rem; }
+            .section-header { margin-bottom: 1.75rem; }
+            .section-header h2 { font-size: 1.75em; }
+            .section-header p { font-size: 0.95em; }
+
+            /* --- Tables: scrollable, tighter --- */
+            #weeklyContent, #pastWinnersContent, #standingsContent,
+            #leaderboardContent, #coursesContent, #videosContent {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .leaderboard-content { padding: 0.75rem 0.5rem; }
+            table { font-size: 0.85em; }
+            th, td { padding: 0.55rem 0.5rem; }
+
+            /* --- Hidden columns on mobile --- */
+            .mob-hide { display: none !important; }
+
+            /* --- Game tabs: stay horizontal, scroll --- */
+            .game-tabs { flex-direction: row; }
+            .tab { padding: 0.65rem 0.85rem; font-size: 0.82em; }
+
+            /* --- Player cards --- */
+            .player-card { padding: 1.25rem; }
+            .player-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+            .player-rank { font-size: 2em; min-width: unset; }
+            .player-details { margin-left: 0; }
+            .player-details h3 { font-size: 1.4em; }
+            .player-stats { flex-wrap: wrap; gap: 0.4rem 1.25rem; font-size: 0.88em; }
+
+            /* --- Footer --- */
+            .footer-content { grid-template-columns: 1fr; gap: 1.25rem; }
+            .footer { padding: 2rem 0 1rem; }
         }
         .loading { text-align: center; padding: 3rem; color: var(--text-gray); }
         .no-data { text-align: center; padding: 3rem; color: var(--text-gray); font-size: 1.2em; }
@@ -419,15 +511,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">VPINHUB <span>GT Ballers</span></a>
-            <ul class="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#weekly">Weekly Challenge</a></li>
-                <li><a href="#past-winners">Past Winners</a></li>
-                <li><a href="#standings">Standings</a></li>
-                <li><a href="#leaderboard">Rankings</a></li>
-                <li><a href="#players">Players</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#videos">Videos</a></li>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
+                <button class="nav-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+                <li><a href="#" class="active" onclick="closeMenu()">Home</a></li>
+                <li><a href="#weekly" onclick="closeMenu()">Weekly Challenge</a></li>
+                <li><a href="#past-winners" onclick="closeMenu()">Past Winners</a></li>
+                <li><a href="#standings" onclick="closeMenu()">Standings</a></li>
+                <li><a href="#leaderboard" onclick="closeMenu()">Rankings</a></li>
+                <li><a href="#players" onclick="closeMenu()">Players</a></li>
+                <li><a href="#courses" onclick="closeMenu()">Courses</a></li>
+                <li><a href="#videos" onclick="closeMenu()">Videos</a></li>
             </ul>
         </div>
     </nav>
@@ -764,7 +858,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Rank</th><th>Player</th><th>Score</th><th>Total</th><th>Date</th><th>Video</th>
+                            <th>Rank</th><th>Player</th><th>Score</th><th>Total</th><th>Date</th><th class="mob-hide">Video</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -782,7 +876,7 @@
                         <td><span class="${vsClass(vs)}">${vs}</span></td>
                         <td>${entry.total_score || 'N/A'}</td>
                         <td>${dateStr}</td>
-                        <td>${entry.youtube_video ? '<span class="video-icon">🎬</span>' : ''}</td>
+                        <td class="mob-hide">${entry.youtube_video ? '<span class="video-icon">🎬</span>' : ''}</td>
                     </tr>
                 `;
             });
@@ -1059,7 +1153,7 @@
                 container.innerHTML = '<div class="no-data">No entries found</div>';
                 return;
             }
-            let html = `<table><thead><tr><th>Rank</th><th>Player</th><th>Course</th><th>Score</th><th>Total</th><th>Video</th></tr></thead><tbody>`;
+            let html = `<table><thead><tr><th>Rank</th><th>Player</th><th>Course</th><th>Score</th><th>Total</th><th class="mob-hide">Video</th></tr></thead><tbody>`;
             entries.forEach((entry, index) => {
                 const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
                 const vs = entry.score_vs_par || 'E';
@@ -1070,7 +1164,7 @@
                         <td>${entry.course || 'Unknown'}</td>
                         <td><span class="${vsClass(vs)}">${vs}</span></td>
                         <td>${entry.total_score || 'N/A'}</td>
-                        <td>${entry.youtube_video ? '<span class="video-icon">🎬</span>' : ''}</td>
+                        <td class="mob-hide">${entry.youtube_video ? '<span class="video-icon">🎬</span>' : ''}</td>
                     </tr>`;
             });
             html += '</tbody></table>';
@@ -1130,6 +1224,9 @@
             return html;
         }
 
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('open'); }
+        function closeMenu() { document.getElementById('navMenu').classList.remove('open'); }
+
         function closeModal() { document.getElementById('scorecardModal').classList.remove('active'); }
         document.getElementById('scorecardModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
         document.getElementById('joinModal').addEventListener('click', function(e) { if (e.target === this) closeJoinModal(); });
@@ -1143,8 +1240,9 @@
             const history = weeklyData.history;
             let html = `<table>
                 <thead><tr>
-                    <th>Week #</th><th>Date</th><th>Course</th><th>Game</th>
-                    <th>🥇 Winner</th><th>Score</th><th>🥈 2nd</th><th>🥉 3rd</th>
+                    <th>Week #</th><th class="mob-hide">Date</th><th>Course</th><th class="mob-hide">Game</th>
+                    <th>🥇 Winner</th><th>Score</th><th class="mob-hide">🥈 2nd</th><th class="mob-hide">🥉 3rd</th>
+                    <th style="width:1px"></th>
                 </tr></thead><tbody>`;
             history.forEach((week, index) => {
                 const weekNum = history.length - index;
@@ -1155,19 +1253,61 @@
                 const second = week.results && week.results[1];
                 const third = week.results && week.results[2];
                 const gameShort = (week.game || '').replace('Golden Tee Unplugged ', 'GT ').replace('Golden Tee Live ', 'GT Live ');
-                html += `<tr>
+                const safeWeek = JSON.stringify(week).replace(/'/g, '&apos;');
+                html += `<tr style="cursor:pointer" onclick='showWeekResults(${safeWeek}, ${weekNum})'>
                     <td><span class="rank">#${weekNum}</span></td>
-                    <td>${dateStr}</td>
+                    <td class="mob-hide">${dateStr}</td>
                     <td><strong style="color: #fff;">${week.course}</strong></td>
-                    <td style="font-size: 0.85em; opacity: 0.8;">${gameShort}</td>
+                    <td class="mob-hide" style="font-size: 0.85em; opacity: 0.8;">${gameShort}</td>
                     <td><span class="rank-1 player-name">${first ? '🏆 ' + first.player : '<span style="opacity:0.4">—</span>'}</span></td>
                     <td>${first ? `<span class="score-highlight">${first.score_vs_par}</span> <span style="opacity:0.7">(${first.total_score})</span>` : '—'}</td>
-                    <td>${second ? `<span class="rank-2">${second.player}</span> ${second.score_vs_par}` : '<span style="opacity:0.4">—</span>'}</td>
-                    <td>${third ? `<span class="rank-3">${third.player}</span> ${third.score_vs_par}` : '<span style="opacity:0.4">—</span>'}</td>
+                    <td class="mob-hide">${second ? `<span class="rank-2">${second.player}</span> ${second.score_vs_par}` : '<span style="opacity:0.4">—</span>'}</td>
+                    <td class="mob-hide">${third ? `<span class="rank-3">${third.player}</span> ${third.score_vs_par}` : '<span style="opacity:0.4">—</span>'}</td>
+                    <td style="opacity:0.4;font-size:0.8em;white-space:nowrap">›</td>
                 </tr>`;
             });
             html += '</tbody></table>';
             container.innerHTML = html;
+        }
+
+        function showWeekResults(week, weekNum) {
+            const modal = document.getElementById('scorecardModal');
+            const content = document.getElementById('modalContent');
+            const dateStr = week.week_start
+                ? new Date(week.week_start + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+                : '';
+            const gameShort = (week.game || '').replace('Golden Tee Unplugged ', 'GT ').replace('Golden Tee Live ', 'GT Live ');
+            const results = week.results || [];
+            const medals = ['🥇', '🥈', '🥉'];
+            const rankClasses = ['rank-1', 'rank-2', 'rank-3'];
+
+            let rows = '';
+            results.forEach((r, i) => {
+                const medal = medals[i] || '';
+                const rc = rankClasses[i] || '';
+                rows += `<tr>
+                    <td><span class="rank ${rc}">#${r.rank}</span></td>
+                    <td>${medal} <span class="player-name">${r.player}</span></td>
+                    <td><span class="${vsClass(r.score_vs_par)}">${r.score_vs_par}</span></td>
+                    <td style="opacity:0.7">${r.total_score}</td>
+                    <td style="opacity:0.6;font-size:0.85em">${r.date || ''}</td>
+                </tr>`;
+            });
+
+            content.innerHTML = `
+                <h2 style="color:var(--primary-orange);margin-bottom:0.25rem">Week #${weekNum} Results</h2>
+                <h3 style="margin-bottom:0.25rem">${week.course}</h3>
+                <p style="opacity:0.6;font-size:0.9em;margin-bottom:1.5rem">${gameShort}${dateStr ? ' &nbsp;·&nbsp; ' + dateStr : ''}</p>
+                ${results.length === 0
+                    ? '<p style="opacity:0.5">No scores submitted this week.</p>'
+                    : `<table>
+                        <thead><tr>
+                            <th>Rank</th><th>Player</th><th>Score</th><th>Total</th><th>Date</th>
+                        </tr></thead>
+                        <tbody>${rows}</tbody>
+                    </table>`
+                }`;
+            modal.classList.add('active');
         }
 
         function showStandings() {
@@ -1182,7 +1322,7 @@
 
             let html = `<table>
                 <thead><tr>
-                    <th>Rank</th><th>Player</th><th>Wins</th><th>Top 3</th><th>Rounds</th><th>Win %</th>
+                    <th>Rank</th><th>Player</th><th>Wins</th><th>Top 3</th><th>Rounds</th><th class="mob-hide">Win %</th>
                 </tr></thead><tbody>`;
             players.forEach((p, index) => {
                 const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
@@ -1193,7 +1333,7 @@
                     <td><span class="score-highlight">${p.wins}</span></td>
                     <td>${p.top3}</td>
                     <td>${p.played}</td>
-                    <td style="opacity: 0.7;">${winPct}</td>
+                    <td class="mob-hide" style="opacity: 0.7;">${winPct}</td>
                 </tr>`;
             });
             html += '</tbody></table>';
