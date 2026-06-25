@@ -246,7 +246,7 @@
 
     <!-- Desktop: in-flow slide-down panel (naturally pushes content down) -->
     <div id="tv-panel">
-        <iframe id="tv-panel-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        <iframe id="tv-panel-iframe" allowfullscreen allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
     </div>
 
     <!-- Mobile: full-screen overlay -->
@@ -258,7 +258,7 @@
             </div>
             <button id="tv-overlay-close" onclick="closeOverlay()">✕ Close</button>
         </div>
-        <iframe id="tv-overlay-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        <iframe id="tv-overlay-iframe" allowfullscreen allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
     </div>
 
     <main class="flex-1 container mx-auto px-6 py-12 max-w-6xl">
@@ -340,10 +340,18 @@
 
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
 
+        const TV_SRC = 'https://vpinhub.github.io/vpinhub-tv/index.html';
         let panelOpen = false;
 
         function isMobile() {
             return window.innerWidth < 1280;
+        }
+
+        function loadIframe(iframe) {
+            if (!iframe.dataset.loaded) {
+                iframe.src = TV_SRC;
+                iframe.dataset.loaded = '1';
+            }
         }
 
         function toggleTV() {
@@ -357,13 +365,13 @@
         // Desktop: slide panel
         function togglePanel() {
             panelOpen = !panelOpen;
-            const panel    = document.getElementById('tv-panel');
-            const iframe   = document.getElementById('tv-panel-iframe');
-            const chevron  = document.getElementById('chevron-desktop');
-            const navBtn   = document.getElementById('tv-nav-btn');
+            const panel   = document.getElementById('tv-panel');
+            const iframe  = document.getElementById('tv-panel-iframe');
+            const chevron = document.getElementById('chevron-desktop');
+            const navBtn  = document.getElementById('tv-nav-btn');
 
             if (panelOpen) {
-                if (!iframe.src) iframe.src = 'https://vpinhub.github.io/vpinhub-tv/index.html';
+                loadIframe(iframe);
                 panel.classList.add('open');
                 chevron.textContent = '▲';
                 navBtn.classList.add('active');
@@ -376,8 +384,7 @@
 
         // Mobile: full-screen overlay
         function openOverlay() {
-            const iframe = document.getElementById('tv-overlay-iframe');
-            if (!iframe.src) iframe.src = 'https://vpinhub.github.io/vpinhub-tv/index.html';
+            loadIframe(document.getElementById('tv-overlay-iframe'));
             document.getElementById('tv-overlay').classList.add('open');
             document.body.style.overflow = 'hidden';
         }
