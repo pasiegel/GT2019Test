@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 2,
-    "week": 2
+    "week": 3
   },
   "season_standings": {
     "ed20910": {
@@ -89,16 +89,27 @@
     }
   ],
   "current": {
-    "course": "Juniper Falls",
+    "course": "Dusty Bend",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 2,
-    "season_week": 2,
-    "start": "2026-08-14T16:00:00",
-    "end": "2026-08-21T16:00:00",
-    "deadline_text": "Friday, August 21st @ 12:00 PM ET"
+    "season_week": 3,
+    "start": "2026-06-25T04:16:22",
+    "end": "2026-06-26T16:00:00",
+    "deadline_text": "Friday, June 26th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-08-14",
+      "course": "Juniper Falls",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 2,
+      "season_week": 2,
+      "start": "2026-08-14T16:00:00",
+      "end": "2026-08-21T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-08-07",
       "course": "Hawthorne Manor",
@@ -837,6 +848,7 @@
     "Desert Valley Resort",
     "Grand Canyon",
     "Hawthorne Manor",
-    "Juniper Falls"
+    "Juniper Falls",
+    "Dusty Bend"
   ]
 }
