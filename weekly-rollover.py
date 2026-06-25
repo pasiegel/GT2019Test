@@ -189,7 +189,8 @@ def get_results_for_week(leaderboard, course, game_year, week_start_iso, week_en
     return results
 
 
-def build_discord_message(current, results, new_course, new_deadline_text, game_year, course_data=None):
+def build_discord_message(current, results, new_course, new_deadline_text, game_year,
+                          course_data=None, new_season_num=0, new_season_week=0, weeks_per_season=6):
     week_start_dt = datetime.fromisoformat(current["start"])
     week_date_str = f"{week_start_dt.strftime('%B')} {week_start_dt.day}, {week_start_dt.year}"
     course = current["course"]
@@ -244,6 +245,8 @@ def build_discord_message(current, results, new_course, new_deadline_text, game_
     lines.append("")
     lines.append(f":golf: Course:   {new_course}")
     lines.append(f":video_game: Game:     Golden Tee Unplugged {game_year}")
+    if new_season_num > 0:
+        lines.append(f":calendar: Season:   Season {new_season_num} · Week {new_season_week} of {weeks_per_season}")
     lines.append(f":alarm_clock: Deadline: {new_deadline_text}")
     lines.append("")
     lines.append(f"PRO-TIP: {course_tip if course_tip else random.choice(GENERIC_TIPS)}")
@@ -328,10 +331,19 @@ def main():
         print(f"  #{r['rank']} {r['player']}  {r['score_vs_par']} ({r['total_score']})")
 
     # Archive to history
+    season_config = weekly.get("season_config", {})
+    weeks_per_season = season_config.get("weeks_per_season", 6)
+    first_season_start = season_config.get("first_season_start", "")
+    current_season = weekly.get("current_season", {"number": 0, "week": 0})
+    season_num = current_season.get("number", 0)
+    season_week = current_season.get("week", 0)
+
     history_entry = {
         "week_start": week_start[:10],
         "course": course,
         "game": current.get("game", f"Golden Tee Unplugged {game_year}"),
+        "season": season_num,
+        "season_week": season_week,
         "start": week_start,
         "end": week_end,
         "results": [
@@ -348,8 +360,55 @@ def main():
     }
     weekly.setdefault("history", []).insert(0, history_entry)
 
-    # Update standings
+    # Update all-time standings
     weekly["standings"] = update_standings(weekly.get("standings", {}), results)
+
+    # Update season standings and advance season
+    now_utc = datetime.now(timezone.utc)
+    today_str = now_utc.strftime("%Y-%m-%d")
+
+    if season_num == 0:
+        # Check if first season should begin with this rollover
+        if first_season_start and today_str >= first_season_start:
+            new_season_num = 1
+            new_season_week = 1
+            weekly["season_standings"] = update_standings({}, results)
+            print(f"Season 1 begins!")
+        else:
+            new_season_num = 0
+            new_season_week = 0
+            print("Pre-season rollover — season has not started yet.")
+    else:
+        # We're mid-season — update season standings first
+        weekly["season_standings"] = update_standings(
+            weekly.get("season_standings", {}), results
+        )
+        if season_week >= weeks_per_season:
+            # Season complete — archive it
+            season_standings = weekly["season_standings"]
+            champion = None
+            if season_standings:
+                champion = max(
+                    season_standings.items(),
+                    key=lambda x: (x[1]["wins"], x[1]["top3"])
+                )[0]
+            completed = {
+                "number": season_num,
+                "weeks": season_week,
+                "champion": champion,
+                "standings": season_standings,
+            }
+            weekly.setdefault("seasons", []).append(completed)
+            new_season_num = season_num + 1
+            new_season_week = 1
+            weekly["season_standings"] = {}
+            print(f"Season {season_num} complete! Champion: {champion}. Starting Season {new_season_num}.")
+        else:
+            new_season_num = season_num
+            new_season_week = season_week + 1
+            print(f"Season {season_num} Week {new_season_week} of {weeks_per_season}.")
+
+    weekly["current_season"] = {"number": new_season_num, "week": new_season_week}
 
     # Pick new course
     used = weekly.get("used_courses_2019", [])
@@ -358,7 +417,6 @@ def main():
     weekly["used_courses_2019"] = used
 
     # Calculate new week window (now → next Friday 12pm ET)
-    now_utc = datetime.now(timezone.utc)
     new_end_utc = next_friday_noon_utc(now_utc)
     new_start_iso = now_utc.strftime("%Y-%m-%dT%H:%M:%S")
     new_end_iso = new_end_utc.strftime("%Y-%m-%dT%H:%M:%S")
@@ -368,12 +426,17 @@ def main():
         "course": new_course,
         "game": f"Golden Tee Unplugged {game_year}",
         "game_year": game_year,
+        "season": new_season_num,
+        "season_week": new_season_week,
         "start": new_start_iso,
         "end": new_end_iso,
         "deadline_text": new_deadline_text,
     }
 
-    discord_message = build_discord_message(current, results, new_course, new_deadline_text, game_year, course_data)
+    discord_message = build_discord_message(
+        current, results, new_course, new_deadline_text, game_year,
+        course_data, new_season_num, new_season_week, weeks_per_season
+    )
     print("\n=== DISCORD MESSAGE PREVIEW ===")
     print(discord_message)
     print("===============================\n")

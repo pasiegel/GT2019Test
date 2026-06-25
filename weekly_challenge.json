@@ -1,13 +1,461 @@
 {
+  "season_config": {
+    "first_season_start": "2026-06-26",
+    "weeks_per_season": 6
+  },
+  "current_season": {
+    "number": 2,
+    "week": 2
+  },
+  "season_standings": {
+    "ed20910": {
+      "wins": 1,
+      "top3": 1,
+      "played": 1
+    },
+    "vpfiends": {
+      "wins": 0,
+      "top3": 1,
+      "played": 1
+    },
+    "Paladin242": {
+      "wins": 0,
+      "top3": 1,
+      "played": 1
+    },
+    "KeenCobra": {
+      "wins": 0,
+      "top3": 0,
+      "played": 1
+    },
+    "LynnInDenver": {
+      "wins": 0,
+      "top3": 0,
+      "played": 1
+    }
+  },
+  "seasons": [
+    {
+      "number": 1,
+      "weeks": 6,
+      "champion": "vpfiends",
+      "standings": {
+        "vpfiends": {
+          "wins": 3,
+          "top3": 6,
+          "played": 6
+        },
+        "ed20910": {
+          "wins": 2,
+          "top3": 4,
+          "played": 6
+        },
+        "Paladin242": {
+          "wins": 1,
+          "top3": 3,
+          "played": 5
+        },
+        "KeenCobra": {
+          "wins": 0,
+          "top3": 3,
+          "played": 5
+        },
+        "dreaddazzman": {
+          "wins": 0,
+          "top3": 1,
+          "played": 4
+        },
+        "LynnInDenver": {
+          "wins": 0,
+          "top3": 1,
+          "played": 3
+        },
+        "intelekt": {
+          "wins": 0,
+          "top3": 0,
+          "played": 2
+        },
+        "DaaxPlays": {
+          "wins": 0,
+          "top3": 0,
+          "played": 1
+        },
+        "dstructv": {
+          "wins": 0,
+          "top3": 0,
+          "played": 2
+        }
+      }
+    }
+  ],
   "current": {
-    "course": "Laurel Park",
+    "course": "Juniper Falls",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
-    "start": "2026-06-19T16:00:00",
-    "end": "2026-06-26T16:00:00",
-    "deadline_text": "Friday, June 26th @ 12:00 PM ET"
+    "season": 2,
+    "season_week": 2,
+    "start": "2026-08-14T16:00:00",
+    "end": "2026-08-21T16:00:00",
+    "deadline_text": "Friday, August 21st @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-08-07",
+      "course": "Hawthorne Manor",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 2,
+      "season_week": 1,
+      "start": "2026-08-07T16:00:00",
+      "end": "2026-08-14T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "ed20910",
+          "score_vs_par": "-12",
+          "total_score": "60",
+          "date": "Aug 8"
+        },
+        {
+          "rank": 2,
+          "player": "vpfiends",
+          "score_vs_par": "-11",
+          "total_score": "61",
+          "date": "Aug 11"
+        },
+        {
+          "rank": 3,
+          "player": "Paladin242",
+          "score_vs_par": "-9",
+          "total_score": "63",
+          "date": "Aug 8"
+        },
+        {
+          "rank": 4,
+          "player": "KeenCobra",
+          "score_vs_par": "-7",
+          "total_score": "65",
+          "date": "Aug 12"
+        },
+        {
+          "rank": 5,
+          "player": "LynnInDenver",
+          "score_vs_par": "-5",
+          "total_score": "67",
+          "date": "Aug 10"
+        }
+      ],
+      "winner": "ed20910"
+    },
+    {
+      "week_start": "2026-07-31",
+      "course": "Grand Canyon",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 1,
+      "season_week": 6,
+      "start": "2026-07-31T16:00:00",
+      "end": "2026-08-07T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "vpfiends",
+          "score_vs_par": "-15",
+          "total_score": "57",
+          "date": "Jul 37"
+        },
+        {
+          "rank": 2,
+          "player": "KeenCobra",
+          "score_vs_par": "-11",
+          "total_score": "61",
+          "date": "Jul 36"
+        },
+        {
+          "rank": 3,
+          "player": "ed20910",
+          "score_vs_par": "-10",
+          "total_score": "62",
+          "date": "Jul 34"
+        },
+        {
+          "rank": 4,
+          "player": "Paladin242",
+          "score_vs_par": "-8",
+          "total_score": "64",
+          "date": "Jul 36"
+        },
+        {
+          "rank": 5,
+          "player": "LynnInDenver",
+          "score_vs_par": "-6",
+          "total_score": "66",
+          "date": "Jul 33"
+        },
+        {
+          "rank": 6,
+          "player": "dstructv",
+          "score_vs_par": "-3",
+          "total_score": "69",
+          "date": "Jul 37"
+        }
+      ],
+      "winner": "vpfiends"
+    },
+    {
+      "week_start": "2026-07-24",
+      "course": "Desert Valley Resort",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 1,
+      "season_week": 5,
+      "start": "2026-07-24T16:00:00",
+      "end": "2026-07-31T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "ed20910",
+          "score_vs_par": "-13",
+          "total_score": "59",
+          "date": "Jul 25"
+        },
+        {
+          "rank": 2,
+          "player": "vpfiends",
+          "score_vs_par": "-12",
+          "total_score": "60",
+          "date": "Jul 25"
+        },
+        {
+          "rank": 3,
+          "player": "dreaddazzman",
+          "score_vs_par": "-9",
+          "total_score": "63",
+          "date": "Jul 30"
+        },
+        {
+          "rank": 4,
+          "player": "DaaxPlays",
+          "score_vs_par": "-6",
+          "total_score": "66",
+          "date": "Jul 26"
+        },
+        {
+          "rank": 5,
+          "player": "intelekt",
+          "score_vs_par": "-4",
+          "total_score": "68",
+          "date": "Jul 27"
+        },
+        {
+          "rank": 6,
+          "player": "dstructv",
+          "score_vs_par": "-2",
+          "total_score": "70",
+          "date": "Jul 25"
+        }
+      ],
+      "winner": "ed20910"
+    },
+    {
+      "week_start": "2026-07-17",
+      "course": "Celtic Shores",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 1,
+      "season_week": 4,
+      "start": "2026-07-17T16:00:00",
+      "end": "2026-07-24T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "Paladin242",
+          "score_vs_par": "-11",
+          "total_score": "61",
+          "date": "Jul 19"
+        },
+        {
+          "rank": 2,
+          "player": "KeenCobra",
+          "score_vs_par": "-10",
+          "total_score": "62",
+          "date": "Jul 18"
+        },
+        {
+          "rank": 3,
+          "player": "vpfiends",
+          "score_vs_par": "-9",
+          "total_score": "63",
+          "date": "Jul 21"
+        },
+        {
+          "rank": 4,
+          "player": "ed20910",
+          "score_vs_par": "-7",
+          "total_score": "65",
+          "date": "Jul 20"
+        },
+        {
+          "rank": 5,
+          "player": "LynnInDenver",
+          "score_vs_par": "-5",
+          "total_score": "67",
+          "date": "Jul 21"
+        },
+        {
+          "rank": 6,
+          "player": "dreaddazzman",
+          "score_vs_par": "-3",
+          "total_score": "69",
+          "date": "Jul 23"
+        }
+      ],
+      "winner": "Paladin242"
+    },
+    {
+      "week_start": "2026-07-10",
+      "course": "Bear Lodge",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 1,
+      "season_week": 3,
+      "start": "2026-07-10T16:00:00",
+      "end": "2026-07-17T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "vpfiends",
+          "score_vs_par": "-14",
+          "total_score": "58",
+          "date": "Jul 13"
+        },
+        {
+          "rank": 2,
+          "player": "Paladin242",
+          "score_vs_par": "-10",
+          "total_score": "62",
+          "date": "Jul 12"
+        },
+        {
+          "rank": 3,
+          "player": "KeenCobra",
+          "score_vs_par": "-9",
+          "total_score": "63",
+          "date": "Jul 13"
+        },
+        {
+          "rank": 4,
+          "player": "ed20910",
+          "score_vs_par": "-8",
+          "total_score": "64",
+          "date": "Jul 13"
+        },
+        {
+          "rank": 5,
+          "player": "intelekt",
+          "score_vs_par": "-4",
+          "total_score": "68",
+          "date": "Jul 12"
+        }
+      ],
+      "winner": "vpfiends"
+    },
+    {
+      "week_start": "2026-07-03",
+      "course": "Antelope Pass",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 1,
+      "season_week": 2,
+      "start": "2026-07-03T16:00:00",
+      "end": "2026-07-10T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "ed20910",
+          "score_vs_par": "-12",
+          "total_score": "60",
+          "date": "Jul 9"
+        },
+        {
+          "rank": 2,
+          "player": "vpfiends",
+          "score_vs_par": "-11",
+          "total_score": "61",
+          "date": "Jul 6"
+        },
+        {
+          "rank": 3,
+          "player": "LynnInDenver",
+          "score_vs_par": "-8",
+          "total_score": "64",
+          "date": "Jul 9"
+        },
+        {
+          "rank": 4,
+          "player": "Paladin242",
+          "score_vs_par": "-7",
+          "total_score": "65",
+          "date": "Jul 9"
+        },
+        {
+          "rank": 5,
+          "player": "KeenCobra",
+          "score_vs_par": "-5",
+          "total_score": "67",
+          "date": "Jul 9"
+        },
+        {
+          "rank": 6,
+          "player": "dreaddazzman",
+          "score_vs_par": "-3",
+          "total_score": "69",
+          "date": "Jul 4"
+        }
+      ],
+      "winner": "ed20910"
+    },
+    {
+      "week_start": "2026-06-26",
+      "course": "Alpine Run",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 1,
+      "season_week": 1,
+      "start": "2026-06-26T16:00:00",
+      "end": "2026-07-03T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "vpfiends",
+          "score_vs_par": "-13",
+          "total_score": "59",
+          "date": "Jun 31"
+        },
+        {
+          "rank": 2,
+          "player": "ed20910",
+          "score_vs_par": "-11",
+          "total_score": "61",
+          "date": "Jun 32"
+        },
+        {
+          "rank": 3,
+          "player": "Paladin242",
+          "score_vs_par": "-9",
+          "total_score": "63",
+          "date": "Jun 28"
+        },
+        {
+          "rank": 4,
+          "player": "KeenCobra",
+          "score_vs_par": "-7",
+          "total_score": "65",
+          "date": "Jun 31"
+        },
+        {
+          "rank": 5,
+          "player": "dreaddazzman",
+          "score_vs_par": "-5",
+          "total_score": "67",
+          "date": "Jun 32"
+        }
+      ],
+      "winner": "vpfiends"
+    },
     {
       "week_start": "2026-06-12",
       "course": "Alpine Run",
@@ -336,52 +784,59 @@
   ],
   "standings": {
     "vpfiends": {
-      "wins": 4,
-      "top3": 7,
-      "played": 8
+      "wins": 7,
+      "top3": 14,
+      "played": 15
     },
     "ed20910": {
-      "wins": 2,
-      "top3": 7,
-      "played": 8
+      "wins": 5,
+      "top3": 12,
+      "played": 15
     },
     "Paladin242": {
-      "wins": 1,
-      "top3": 6,
-      "played": 8
+      "wins": 2,
+      "top3": 10,
+      "played": 14
     },
     "KeenCobra": {
       "wins": 1,
-      "top3": 5,
-      "played": 7
-    },
-    "LynnInDenver": {
-      "wins": 1,
-      "top3": 4,
-      "played": 6
+      "top3": 8,
+      "played": 13
     },
     "dreaddazzman": {
       "wins": 0,
-      "top3": 3,
-      "played": 5
+      "top3": 4,
+      "played": 9
+    },
+    "LynnInDenver": {
+      "wins": 1,
+      "top3": 5,
+      "played": 10
     },
     "intelekt": {
       "wins": 0,
       "top3": 2,
-      "played": 4
+      "played": 6
     },
     "DaaxPlays": {
       "wins": 0,
       "top3": 1,
-      "played": 3
+      "played": 4
     },
     "dstructv": {
       "wins": 0,
       "top3": 1,
-      "played": 2
+      "played": 4
     }
   },
   "used_courses_2019": [
-    "Laurel Park"
+    "Alpine Run",
+    "Antelope Pass",
+    "Bear Lodge",
+    "Celtic Shores",
+    "Desert Valley Resort",
+    "Grand Canyon",
+    "Hawthorne Manor",
+    "Juniper Falls"
   ]
 }

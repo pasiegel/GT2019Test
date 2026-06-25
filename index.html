@@ -434,6 +434,7 @@
             justify-content: center;
         }
         .mob-hide { display: revert; }
+        .mob-only { display: none; }
 
         @media (max-width: 768px) {
             /* --- Nav: hamburger overlay --- */
@@ -486,6 +487,7 @@
 
             /* --- Hidden columns on mobile --- */
             .mob-hide { display: none !important; }
+            .mob-only { display: block !important; }
 
             /* --- Game tabs: stay horizontal, scroll --- */
             .game-tabs { flex-direction: row; }
@@ -565,6 +567,7 @@
             <div class="section-header">
                 <h2 id="weeklyTitle">🏆 Weekly Challenge</h2>
                 <p id="weeklyCourseName" style="font-size: 1.3em; font-weight: 600; color: var(--primary-orange); margin-top: 0.5rem;">Loading...</p>
+                <span id="weeklySeasonBadge" style="display:none;background:var(--medium-gray);border:1px solid var(--light-gray);color:var(--text-gray);font-size:0.8em;padding:0.25rem 0.75rem;border-radius:999px;margin-top:0.4rem;letter-spacing:0.03em;"></span>
                 <p id="weeklyDateRange" style="font-size: 0.9em; opacity: 0.8; margin-top: 0.5rem;">Loading...</p>
             </div>
 
@@ -620,6 +623,7 @@
             <div class="section-header">
                 <h2>Video Submissions</h2>
                 <p>Best performances ranked by score</p>
+                <p class="mob-only" style="font-size:0.8em;opacity:0.55;margin-top:0.35rem">Tap any row to watch</p>
             </div>
 
             <div class="leaderboard-preview">
@@ -816,9 +820,22 @@
             const weekStart = new Date(current.start + 'Z');
             const weekEnd = new Date(current.end + 'Z');
 
+            const seasonNum = current.season || 0;
+            const seasonWeek = current.season_week || 0;
+            const weeksPerSeason = (weeklyData.season_config || {}).weeks_per_season || 6;
+            const seasonLabel = seasonNum > 0
+                ? `Season ${seasonNum} · Week ${seasonWeek} of ${weeksPerSeason}`
+                : '';
+
             document.getElementById('weeklyTitle').textContent = `🏆 Weekly Challenge (GT ${current.game_year})`;
             document.getElementById('weeklyCourseName').textContent = current.course;
             document.getElementById('weeklyDateRange').textContent = `Deadline: ${current.deadline_text}`;
+
+            const seasonBadgeEl = document.getElementById('weeklySeasonBadge');
+            if (seasonBadgeEl) {
+                seasonBadgeEl.textContent = seasonLabel;
+                seasonBadgeEl.style.display = seasonLabel ? 'inline-block' : 'none';
+            }
 
             const playerBestScores = {};
             leaderboardData.forEach(entry => {
@@ -894,9 +911,12 @@
             document.getElementById('totalRounds').textContent = rounds;
             document.getElementById('totalVideos').textContent = videos;
 
-            // Season leader from weekly standings
-            if (weeklyData && weeklyData.standings) {
-                const ranked = Object.entries(weeklyData.standings)
+            // Season leader from current season standings
+            if (weeklyData) {
+                const seasonNum = (weeklyData.current_season || {}).number || 0;
+                const src = seasonNum > 0 ? (weeklyData.season_standings || {}) : (weeklyData.standings || {});
+                const label = seasonNum > 0 ? `Season ${seasonNum} Leader` : 'Season Leader';
+                const ranked = Object.entries(src)
                     .map(([name, s]) => ({ name, ...s }))
                     .filter(p => p.wins > 0)
                     .sort((a, b) => b.wins - a.wins || b.top3 - a.top3);
@@ -904,11 +924,11 @@
                     const leader = ranked[0];
                     document.getElementById('seasonLeaderName').textContent = leader.name;
                     document.getElementById('seasonLeaderDetails').innerHTML =
-                        `<strong style="color:var(--gold)">Season Leader</strong><br>` +
+                        `<strong style="color:var(--gold)">${label}</strong><br>` +
                         `${leader.wins} win${leader.wins !== 1 ? 's' : ''} &bull; ${leader.top3} top&#8209;3 finishes`;
                 } else {
                     document.getElementById('seasonLeaderName').textContent = '—';
-                    document.getElementById('seasonLeaderDetails').textContent = 'Season Leader';
+                    document.getElementById('seasonLeaderDetails').textContent = seasonNum > 0 ? `Season ${seasonNum} underway` : 'Season starts soon';
                 }
             }
         }
@@ -1057,17 +1077,17 @@
                 container.innerHTML = '<div class="no-data">No video submissions yet</div>';
                 return;
             }
-            let html = `<table><thead><tr><th>Rank</th><th>Player</th><th>Game</th><th>Course</th><th>Score</th><th>Video</th></tr></thead><tbody>`;
+            let html = `<table><thead><tr><th>Rank</th><th>Player</th><th class="mob-hide">Game</th><th>Course</th><th>Score</th><th class="mob-hide">Video</th></tr></thead><tbody>`;
             videoEntries.forEach((entry, index) => {
                 const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
                 html += `
                     <tr onclick='showVideoModal(${JSON.stringify(entry).replace(/'/g, "&apos;")})' style="cursor: pointer;">
                         <td><span class="rank ${rankClass}">#${index + 1}</span></td>
                         <td><span class="player-name">${entry.username || 'Unknown'}</span></td>
-                        <td>${entry.game || 'Unknown'}</td>
+                        <td class="mob-hide">${entry.game || 'Unknown'}</td>
                         <td>${entry.course || 'Unknown'}</td>
                         <td><span class="${vsClass(entry.score_vs_par)}">${entry.score_vs_par || 'E'}</span> <span style="opacity:0.6">(${entry.total_score || 'N/A'})</span></td>
-                        <td><a href="${entry.youtube_video}" target="_blank" onclick="event.stopPropagation()" style="color: var(--primary-orange); text-decoration: none;">🎬 Watch</a></td>
+                        <td class="mob-hide"><a href="${entry.youtube_video}" target="_blank" onclick="event.stopPropagation()" style="color: var(--primary-orange); text-decoration: none;">🎬 Watch</a></td>
                     </tr>`;
             });
             html += '</tbody></table>';
@@ -1312,11 +1332,56 @@
 
         function showStandings() {
             const container = document.getElementById('standingsContent');
-            if (!weeklyData || !weeklyData.standings || Object.keys(weeklyData.standings).length === 0) {
-                container.innerHTML = '<div class="no-data">No standings data yet.</div>';
+            if (!weeklyData) return;
+
+            const currentSeason = weeklyData.current_season || { number: 0, week: 0 };
+            const pastSeasons = (weeklyData.seasons || []).slice().reverse();
+            const hasActiveSeason = currentSeason.number > 0;
+
+            let tabs = '<div class="game-tabs" style="margin-bottom:1rem;border-radius:8px;overflow:hidden">';
+            if (hasActiveSeason) {
+                tabs += `<button class="tab active" onclick="renderStandings('current',this)">Season ${currentSeason.number}</button>`;
+            }
+            pastSeasons.forEach((s, i) => {
+                tabs += `<button class="tab" onclick="renderStandings(${i},this)">Season ${s.number}</button>`;
+            });
+            tabs += `<button class="tab${!hasActiveSeason ? ' active' : ''}" onclick="renderStandings('alltime',this)">All Time</button>`;
+            tabs += '</div><div id="standingsTableInner"></div>';
+            container.innerHTML = tabs;
+
+            renderStandings(hasActiveSeason ? 'current' : 'alltime');
+        }
+
+        function renderStandings(key, clickedBtn) {
+            if (clickedBtn) {
+                clickedBtn.closest('.game-tabs').querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+                clickedBtn.classList.add('active');
+            }
+            const currentSeason = weeklyData.current_season || { number: 0, week: 0 };
+            const pastSeasons = (weeklyData.seasons || []).slice().reverse();
+            let standingsObj, label;
+
+            if (key === 'current') {
+                standingsObj = weeklyData.season_standings || {};
+                label = `Season ${currentSeason.number}`;
+            } else if (key === 'alltime') {
+                standingsObj = weeklyData.standings || {};
+                label = 'All Time';
+            } else {
+                const s = pastSeasons[key];
+                standingsObj = s ? s.standings : {};
+                label = s ? `Season ${s.number}` : '';
+                if (s && s.champion) {
+                    label += ` — Champion: ${s.champion}`;
+                }
+            }
+
+            const inner = document.getElementById('standingsTableInner');
+            if (!standingsObj || Object.keys(standingsObj).length === 0) {
+                inner.innerHTML = '<div class="no-data">No standings yet for this period.</div>';
                 return;
             }
-            const players = Object.entries(weeklyData.standings)
+            const players = Object.entries(standingsObj)
                 .map(([name, s]) => ({ name, ...s }))
                 .sort((a, b) => b.wins - a.wins || b.top3 - a.top3 || b.played - a.played);
 
@@ -1333,11 +1398,11 @@
                     <td><span class="score-highlight">${p.wins}</span></td>
                     <td>${p.top3}</td>
                     <td>${p.played}</td>
-                    <td class="mob-hide" style="opacity: 0.7;">${winPct}</td>
+                    <td class="mob-hide" style="opacity:0.7">${winPct}</td>
                 </tr>`;
             });
             html += '</tbody></table>';
-            container.innerHTML = html;
+            inner.innerHTML = html;
         }
     </script>
 </body>
