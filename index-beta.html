@@ -17,10 +17,10 @@
 
         .glow-orange { box-shadow: 0 0 20px rgba(249, 115, 22, 0.15); }
         .glow-fuchsia { box-shadow: 0 0 20px rgba(217, 70, 239, 0.15); }
-        .glow-indigo { box-shadow: 0 0 20px rgba(99, 102, 241, 0.15); }
-        .glow-amber { box-shadow: 0 0 20px rgba(245, 158, 11, 0.15); }
+        .glow-indigo  { box-shadow: 0 0 20px rgba(99, 102, 241, 0.15); }
+        .glow-amber   { box-shadow: 0 0 20px rgba(245, 158, 11, 0.15); }
         .glow-emerald { box-shadow: 0 0 20px rgba(16, 185, 129, 0.15); }
-        .glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.15); }
+        .glow-cyan    { box-shadow: 0 0 20px rgba(6, 182, 212, 0.15); }
 
         .nav-dropdown { visibility: hidden; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
         .group:hover .nav-dropdown { visibility: visible; opacity: 1; transform: translateY(0); }
@@ -28,7 +28,26 @@
         #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
         #mobile-menu.open { max-height: 1000px; opacity: 1; }
 
-        /* ── SAMPLE B: Nav bar live button + slide-down TV panel ── */
+        /* ── Live dot (shared) ── */
+        .live-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #475569;
+            flex-shrink: 0;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        .live-dot.is-live {
+            background: #ef4444;
+            animation: live-pulse 1.5s ease-out infinite;
+        }
+        @keyframes live-pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+            70%  { box-shadow: 0 0 0 5px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* ── Desktop nav TV button ── */
         #tv-nav-btn {
             display: flex;
             align-items: center;
@@ -46,33 +65,28 @@
             transition: all 0.25s ease;
             white-space: nowrap;
         }
-        #tv-nav-btn:hover { background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.25); }
-        #tv-nav-btn.is-live {
-            color: #fca5a5;
-            border-color: rgba(239, 68, 68, 0.4);
-            background: rgba(239, 68, 68, 0.08);
-            box-shadow: 0 0 12px rgba(239, 68, 68, 0.15);
-        }
-        #tv-nav-btn.active { color: white; background: rgba(255,255,255,0.1); }
+        #tv-nav-btn:hover  { background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.25); }
+        #tv-nav-btn.is-live { color: #fca5a5; border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.08); box-shadow: 0 0 12px rgba(239,68,68,0.15); }
+        #tv-nav-btn.active  { color: white; background: rgba(255,255,255,0.1); }
 
-        .nav-live-dot {
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: #475569;
-            flex-shrink: 0;
-            transition: background 0.3s;
+        /* ── Mobile nav TV icon button (always visible on small screens) ── */
+        #tv-mobile-icon-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            transition: all 0.25s ease;
         }
-        .nav-live-dot.is-live {
-            background: #ef4444;
-            animation: nav-pulse 1.5s ease-out infinite;
-        }
-        @keyframes nav-pulse {
-            0%   { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
-            70%  { box-shadow: 0 0 0 5px rgba(239, 68, 68, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
-        }
+        #tv-mobile-icon-btn:hover  { background: rgba(255,255,255,0.1); color: white; }
+        #tv-mobile-icon-btn.is-live { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.08); box-shadow: 0 0 10px rgba(239,68,68,0.15); }
 
-        /* Slide-down TV panel — sits below nav, above page content */
+        /* ── Desktop: in-flow slide-down panel (pushes content down) ── */
         #tv-panel {
             width: 100%;
             max-height: 0;
@@ -80,50 +94,79 @@
             transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             background: #020617;
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            position: sticky;
-            top: 81px; /* below sticky nav */
-            z-index: 40;
         }
-        #tv-panel.open { max-height: 70vh; }
-        #tv-panel iframe {
-            width: 100%;
-            height: 70vh;
-            border: none;
-            display: block;
+        #tv-panel.open { max-height: 72vh; }
+        #tv-panel-iframe { width: 100%; height: 72vh; border: none; display: block; }
+
+        /* ── Mobile: full-screen overlay ── */
+        #tv-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: #020617;
+            flex-direction: column;
         }
+        #tv-overlay.open { display: flex; }
+        #tv-overlay-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255,255,255,0.02);
+            flex-shrink: 0;
+        }
+        #tv-overlay-bar .bar-title {
+            font-size: 0.65rem; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 0.15em;
+            color: #94a3b8;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        #tv-overlay-close {
+            display: flex; align-items: center; gap: 0.4rem;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: #94a3b8;
+            font-size: 0.6rem; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            cursor: pointer; transition: all 0.2s;
+        }
+        #tv-overlay-close:hover { background: rgba(255,255,255,0.12); color: white; }
+        #tv-overlay-iframe { flex: 1; border: none; width: 100%; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col hero-gradient">
 
     <nav class="glass border-b border-white/10 p-4 md:p-6 sticky top-0 z-50">
         <div class="container mx-auto flex flex-wrap items-center justify-between gap-4">
+
             <div class="flex items-center gap-4">
                 <a href="index.html" class="hover:opacity-80 transition-opacity">
                     <h1 class="text-2xl md:text-3xl font-black italic tracking-tighter uppercase leading-none">VPIN<span class="text-orange-500">HUB</span></h1>
                 </a>
             </div>
 
+            <!-- Desktop nav links -->
             <div class="hidden xl:flex items-center gap-6 text-[10px] md:text-xs font-bold uppercase tracking-widest">
                 <a href="https://discord.gg/rnaRKNgCjB" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition-colors">Join Our Discord</a>
                 <span class="text-white/20">|</span>
                 <a href="competition/" class="text-orange-400 hover:text-orange-300 transition-colors">Competition</a>
 
                 <div class="relative group py-2">
-                    <button class="text-gray-300 hover:text-emerald-400 flex items-center gap-2 transition-colors focus:outline-none uppercase tracking-widest">
-                        Tutorials <span class="text-[8px]">▼</span>
-                    </button>
+                    <button class="text-gray-300 hover:text-emerald-400 flex items-center gap-2 transition-colors focus:outline-none uppercase tracking-widest">Tutorials <span class="text-[8px]">▼</span></button>
                     <div class="nav-dropdown absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 bg-slate-900 border border-white/10 rounded-xl shadow-2xl flex flex-col overflow-hidden z-50">
-                        <div class="bg-white/5 px-4 py-2 border-b border-white/10">
-                            <span class="text-[9px] text-gray-500 font-black">GUIDES & TUTORIALS</span>
-                        </div>
-                        <a href="how-to-build-a-vpin-cab.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Build a VPIN Cab</span><span class="text-[10px]">↗</span></a>
-                        <a href="how-to-update-vpin.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Update VPIN</span><span class="text-[10px]">↗</span></a>
-                        <a href="how-to-setup-altsound2.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Setup AltSound2</span><span class="text-[10px]">↗</span></a>
-                        <a href="how-to-play-pinball.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Play Pinball</span><span class="text-[10px]">↗</span></a>
-                        <a href="how-to-stream-pinball.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Stream Pinball</span><span class="text-[10px]">↗</span></a>
-                        <a href="vpx-table-tutorials.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>VPX Table Tutorials</span><span class="text-[10px]">↗</span></a>
-                        <a href="fp-table-tutorials.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>FP Table Tutorials</span><span class="text-[10px]">↗</span></a>
-                        <a href="fp-aio-update.html" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white flex justify-between items-center transition-colors"><span>FP All-in-One</span><span class="text-[10px]">↗</span></a>
+                        <div class="bg-white/5 px-4 py-2 border-b border-white/10"><span class="text-[9px] text-gray-500 font-black">GUIDES & TUTORIALS</span></div>
+                        <a href="how-to-build-a-vpin-cab.html"   class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Build a VPIN Cab</span><span class="text-[10px]">↗</span></a>
+                        <a href="how-to-update-vpin.html"        class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Update VPIN</span><span class="text-[10px]">↗</span></a>
+                        <a href="how-to-setup-altsound2.html"    class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Setup AltSound2</span><span class="text-[10px]">↗</span></a>
+                        <a href="how-to-play-pinball.html"       class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Play Pinball</span><span class="text-[10px]">↗</span></a>
+                        <a href="how-to-stream-pinball.html"     class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>How to Stream Pinball</span><span class="text-[10px]">↗</span></a>
+                        <a href="vpx-table-tutorials.html"       class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>VPX Table Tutorials</span><span class="text-[10px]">↗</span></a>
+                        <a href="fp-table-tutorials.html"        class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>FP Table Tutorials</span><span class="text-[10px]">↗</span></a>
+                        <a href="fp-aio-update.html"             class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white flex justify-between items-center transition-colors"><span>FP All-in-One</span><span class="text-[10px]">↗</span></a>
                     </div>
                 </div>
 
@@ -132,78 +175,90 @@
                 <a href="showcase.html" class="text-gray-300 hover:text-cyan-400 transition-colors">Latest Tables</a>
 
                 <div class="relative group py-2">
-                    <button class="text-gray-300 hover:text-cyan-400 flex items-center gap-2 transition-colors focus:outline-none uppercase tracking-widest">
-                        Downloads <span class="text-[8px]">▼</span>
-                    </button>
+                    <button class="text-gray-300 hover:text-cyan-400 flex items-center gap-2 transition-colors focus:outline-none uppercase tracking-widest">Downloads <span class="text-[8px]">▼</span></button>
                     <div class="nav-dropdown absolute top-full right-0 mt-1 w-64 bg-slate-900 border border-white/10 rounded-xl shadow-2xl flex flex-col overflow-hidden z-50">
-                        <div class="bg-white/5 px-4 py-2 border-b border-white/10">
-                            <span class="text-[9px] text-gray-500 font-black">ESSENTIAL SOFTWARE</span>
-                        </div>
+                        <div class="bg-white/5 px-4 py-2 border-b border-white/10"><span class="text-[9px] text-gray-500 font-black">ESSENTIAL SOFTWARE</span></div>
                         <a href="https://www.nailbuster.com/wikipinup/doku.php?id=baller_installer" target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>PinUp Popper 'Baller'</span><span class="text-[10px]">↗</span></a>
-                        <a href="https://github.com/vpinball/vpinball/releases" target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>VPX Latest</span><span class="text-[10px]">↗</span></a>
-                        <a href="https://github.com/vpinball/b2s-backglass/releases" target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>B2S Server Latest</span><span class="text-[10px]">↗</span></a>
-                        <a href="https://github.com/freezy/dmd-extensions/releases" target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>Freezy DMDEXT Latest</span><span class="text-[10px]">↗</span></a>
-                        <a href="https://github.com/vbousquet/flexdmd/releases/" target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>FLEX DMD Latest</span><span class="text-[10px]">↗</span></a>
-                        <a href="https://configtool.vpuniverse.com/app/home" target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>DOF Tool Config V3</span><span class="text-[10px]">↗</span></a>
+                        <a href="https://github.com/vpinball/vpinball/releases"                      target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>VPX Latest</span><span class="text-[10px]">↗</span></a>
+                        <a href="https://github.com/vpinball/b2s-backglass/releases"                 target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>B2S Server Latest</span><span class="text-[10px]">↗</span></a>
+                        <a href="https://github.com/freezy/dmd-extensions/releases"                 target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>Freezy DMDEXT Latest</span><span class="text-[10px]">↗</span></a>
+                        <a href="https://github.com/vbousquet/flexdmd/releases/"                    target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>FLEX DMD Latest</span><span class="text-[10px]">↗</span></a>
+                        <a href="https://configtool.vpuniverse.com/app/home"                        target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white border-b border-white/5 flex justify-between items-center transition-colors"><span>DOF Tool Config V3</span><span class="text-[10px]">↗</span></a>
                         <a href="https://vpuniverse.com/files/file/14807-future-pinball-and-bam-essentials-all-in-one/" target="_blank" class="px-4 py-3 hover:bg-white/10 text-gray-300 hover:text-white flex justify-between items-center transition-colors"><span>FP Latest</span><span class="text-[10px]">↗</span></a>
                     </div>
                 </div>
 
                 <span class="text-white/20">|</span>
 
-                <!-- SAMPLE B: Nav bar TV button -->
+                <!-- Desktop TV button -->
                 <button id="tv-nav-btn" onclick="toggleTV()">
-                    <span class="nav-live-dot" id="nav-dot"></span>
-                    <span id="nav-label">📺 Watch</span>
-                    <span id="nav-chevron" style="font-size:0.6rem;opacity:0.5;">▼</span>
+                    <span class="live-dot" id="dot-desktop"></span>
+                    <span id="label-desktop">📺 Watch</span>
+                    <span id="chevron-desktop" style="font-size:0.55rem;opacity:0.45;">▼</span>
                 </button>
             </div>
 
-            <button id="menu-btn" class="xl:hidden bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-white transition-colors font-bold text-sm uppercase tracking-widest">
-                MENU ☰
-            </button>
+            <!-- Mobile right-side buttons: TV icon + MENU -->
+            <div class="xl:hidden flex items-center gap-2">
+                <button id="tv-mobile-icon-btn" onclick="toggleTV()">
+                    <span class="live-dot" id="dot-mobile-icon"></span>
+                    <span>📺</span>
+                </button>
+                <button id="menu-btn" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-white transition-colors font-bold text-sm uppercase tracking-widest">
+                    MENU ☰
+                </button>
+            </div>
         </div>
 
+        <!-- Mobile expanded menu -->
         <div id="mobile-menu" class="xl:hidden flex flex-col gap-4 mt-4 pt-4 border-t border-white/10 text-xs font-bold uppercase tracking-widest px-2 pb-2">
-            <button onclick="toggleTV()" class="text-left text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
-                <span class="nav-live-dot" id="nav-dot-mobile"></span>
-                <span id="nav-label-mobile">📺 VPinHub TV</span>
-            </button>
             <a href="https://discord.gg/rnaRKNgCjB" target="_blank" class="text-indigo-400 hover:text-indigo-300">Join Our Discord</a>
             <a href="competition/" class="text-orange-400 hover:text-orange-300">Competition</a>
             <div class="pt-2 pb-2">
                 <span class="text-gray-500 mb-3 block">Tutorials</span>
                 <div class="flex flex-col gap-3 pl-4 border-l-2 border-white/10">
-                    <a href="how-to-build-a-vpin-cab.html" class="text-gray-400 hover:text-white text-[10px]">How to Build a VPIN Cab</a>
-                    <a href="how-to-update-vpin.html" class="text-gray-400 hover:text-white text-[10px]">How to Update VPIN</a>
-                    <a href="how-to-setup-altsound2.html" class="text-gray-400 hover:text-white text-[10px]">How to Setup AltSound2</a>
-                    <a href="how-to-play-pinball.html" class="text-gray-400 hover:text-white text-[10px]">How to Play Pinball</a>
-                    <a href="how-to-stream-pinball.html" class="text-gray-400 hover:text-white text-[10px]">How to Stream Pinball</a>
-                    <a href="vpx-table-tutorials.html" class="text-gray-400 hover:text-white text-[10px]">VPX Table Tutorials</a>
-                    <a href="fp-table-tutorials.html" class="text-gray-400 hover:text-white text-[10px]">FP Table Tutorials</a>
-                    <a href="fp-aio-update.html" class="text-gray-400 hover:text-white text-[10px]">FP All-in-One</a>
+                    <a href="how-to-build-a-vpin-cab.html"  class="text-gray-400 hover:text-white text-[10px]">How to Build a VPIN Cab</a>
+                    <a href="how-to-update-vpin.html"       class="text-gray-400 hover:text-white text-[10px]">How to Update VPIN</a>
+                    <a href="how-to-setup-altsound2.html"   class="text-gray-400 hover:text-white text-[10px]">How to Setup AltSound2</a>
+                    <a href="how-to-play-pinball.html"      class="text-gray-400 hover:text-white text-[10px]">How to Play Pinball</a>
+                    <a href="how-to-stream-pinball.html"    class="text-gray-400 hover:text-white text-[10px]">How to Stream Pinball</a>
+                    <a href="vpx-table-tutorials.html"      class="text-gray-400 hover:text-white text-[10px]">VPX Table Tutorials</a>
+                    <a href="fp-table-tutorials.html"       class="text-gray-400 hover:text-white text-[10px]">FP Table Tutorials</a>
+                    <a href="fp-aio-update.html"            class="text-gray-400 hover:text-white text-[10px]">FP All-in-One</a>
                 </div>
             </div>
             <a href="interviews.html" class="text-fuchsia-400 hover:text-fuchsia-300">Interviews</a>
-            <a href="showcase.html" class="text-cyan-400 hover:text-cyan-300">Latest Tables</a>
+            <a href="showcase.html"   class="text-cyan-400 hover:text-cyan-300">Latest Tables</a>
             <div class="pt-2 pb-2">
                 <span class="text-gray-500 mb-3 block">Software Downloads</span>
                 <div class="flex flex-col gap-3 pl-4 border-l-2 border-white/10">
                     <a href="https://www.nailbuster.com/wikipinup/doku.php?id=baller_installer" target="_blank" class="text-gray-400 hover:text-white text-[10px]">PinUp Popper 'Baller'</a>
-                    <a href="https://github.com/vpinball/vpinball/releases" target="_blank" class="text-gray-400 hover:text-white text-[10px]">VPX Latest</a>
-                    <a href="https://github.com/vpinball/b2s-backglass/releases" target="_blank" class="text-gray-400 hover:text-white text-[10px]">B2S Server Latest</a>
-                    <a href="https://github.com/freezy/dmd-extensions/releases" target="_blank" class="text-gray-400 hover:text-white text-[10px]">Freezy DMDEXT Latest</a>
-                    <a href="https://github.com/vbousquet/flexdmd/releases/" target="_blank" class="text-gray-400 hover:text-white text-[10px]">FLEX DMD Latest</a>
-                    <a href="https://configtool.vpuniverse.com/app/home" target="_blank" class="text-gray-400 hover:text-white text-[10px]">DOF Tool Config V3</a>
+                    <a href="https://github.com/vpinball/vpinball/releases"                      target="_blank" class="text-gray-400 hover:text-white text-[10px]">VPX Latest</a>
+                    <a href="https://github.com/vpinball/b2s-backglass/releases"                 target="_blank" class="text-gray-400 hover:text-white text-[10px]">B2S Server Latest</a>
+                    <a href="https://github.com/freezy/dmd-extensions/releases"                 target="_blank" class="text-gray-400 hover:text-white text-[10px]">Freezy DMDEXT Latest</a>
+                    <a href="https://github.com/vbousquet/flexdmd/releases/"                    target="_blank" class="text-gray-400 hover:text-white text-[10px]">FLEX DMD Latest</a>
+                    <a href="https://configtool.vpuniverse.com/app/home"                        target="_blank" class="text-gray-400 hover:text-white text-[10px]">DOF Tool Config V3</a>
                     <a href="https://vpuniverse.com/files/file/14807-future-pinball-and-bam-essentials-all-in-one/" target="_blank" class="text-gray-400 hover:text-white text-[10px]">FP Latest</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- SAMPLE B: Slide-down TV panel, sticky below nav -->
+    <!-- Desktop: in-flow slide-down panel (naturally pushes content down) -->
     <div id="tv-panel">
-        <iframe id="tv-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        <iframe id="tv-panel-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+    </div>
+
+    <!-- Mobile: full-screen overlay -->
+    <div id="tv-overlay">
+        <div id="tv-overlay-bar">
+            <div class="bar-title">
+                <span class="live-dot" id="dot-overlay"></span>
+                VPinHub TV
+            </div>
+            <button id="tv-overlay-close" onclick="closeOverlay()">✕ Close</button>
+        </div>
+        <iframe id="tv-overlay-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
     </div>
 
     <main class="flex-1 container mx-auto px-6 py-12 max-w-6xl">
@@ -234,9 +289,7 @@
                     <h3 class="text-2xl font-black uppercase italic text-white mb-2">Active Events</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">Enter Special When Lit, Thursday Throwdown, and VPC Competition Corner.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/5 text-orange-500 font-bold uppercase text-[10px] tracking-widest flex justify-between">
-                    <span>View Competitions</span><span>→</span>
-                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 text-orange-500 font-bold uppercase text-[10px] tracking-widest flex justify-between"><span>View Competitions</span><span>→</span></div>
             </a>
 
             <a href="how-to-build-a-vpin-cab.html" class="hub-card glass rounded-2xl p-6 border-l-4 border-emerald-500 glow-emerald flex flex-col justify-between">
@@ -245,9 +298,7 @@
                     <h3 class="text-2xl font-black uppercase italic text-white mb-2">Getting Started</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">Start your journey here. Learn how to build your own Virtual Pinball Cabinet and configure your setup.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/5 text-emerald-400 font-bold uppercase text-[10px] tracking-widest flex justify-between">
-                    <span>View Guides</span><span>→</span>
-                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 text-emerald-400 font-bold uppercase text-[10px] tracking-widest flex justify-between"><span>View Guides</span><span>→</span></div>
             </a>
 
             <a href="competition/past-competitions.html" class="hub-card glass rounded-2xl p-6 border-l-4 border-indigo-500 glow-indigo flex flex-col justify-between">
@@ -256,9 +307,7 @@
                     <h3 class="text-2xl font-black uppercase italic text-white mb-2">Hall of Fame</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">Look back at historical leaderboards, past champions, and legacy achievements.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/5 text-indigo-400 font-bold uppercase text-[10px] tracking-widest flex justify-between">
-                    <span>View Archives</span><span>→</span>
-                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 text-indigo-400 font-bold uppercase text-[10px] tracking-widest flex justify-between"><span>View Archives</span><span>→</span></div>
             </a>
         </div>
 
@@ -284,54 +333,93 @@
     </footer>
 
     <script>
+        // ── Nav mobile menu ──
         document.getElementById('menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('open');
         });
 
-        let tvOpen = false;
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
+
+        let panelOpen = false;
+
+        function isMobile() {
+            return window.innerWidth < 1280;
+        }
 
         function toggleTV() {
-            tvOpen = !tvOpen;
-            const panel = document.getElementById('tv-panel');
-            const iframe = document.getElementById('tv-iframe');
-            const chevron = document.getElementById('nav-chevron');
-            const btn = document.getElementById('tv-nav-btn');
-
-            if (tvOpen) {
-                if (!iframe.src) iframe.src = 'https://vpinhub.github.io/vpinhub-tv/index.html';
-                panel.classList.add('open');
-                chevron.textContent = '▲';
-                btn.classList.add('active');
-                panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (isMobile()) {
+                openOverlay();
             } else {
-                panel.classList.remove('open');
-                chevron.textContent = '▼';
-                btn.classList.remove('active');
+                togglePanel();
             }
         }
 
+        // Desktop: slide panel
+        function togglePanel() {
+            panelOpen = !panelOpen;
+            const panel    = document.getElementById('tv-panel');
+            const iframe   = document.getElementById('tv-panel-iframe');
+            const chevron  = document.getElementById('chevron-desktop');
+            const navBtn   = document.getElementById('tv-nav-btn');
+
+            if (panelOpen) {
+                if (!iframe.src) iframe.src = 'https://vpinhub.github.io/vpinhub-tv/index.html';
+                panel.classList.add('open');
+                chevron.textContent = '▲';
+                navBtn.classList.add('active');
+            } else {
+                panel.classList.remove('open');
+                chevron.textContent = '▼';
+                navBtn.classList.remove('active');
+            }
+        }
+
+        // Mobile: full-screen overlay
+        function openOverlay() {
+            const iframe = document.getElementById('tv-overlay-iframe');
+            if (!iframe.src) iframe.src = 'https://vpinhub.github.io/vpinhub-tv/index.html';
+            document.getElementById('tv-overlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeOverlay() {
+            document.getElementById('tv-overlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // If panel is open and user resizes to mobile, close it cleanly
+        window.addEventListener('resize', () => {
+            if (panelOpen && isMobile()) {
+                document.getElementById('tv-panel').classList.remove('open');
+                document.getElementById('chevron-desktop').textContent = '▼';
+                document.getElementById('tv-nav-btn').classList.remove('active');
+                panelOpen = false;
+            }
+        });
+
+        // ── Live status ──
         async function checkLive() {
             try {
                 const r = await fetch('https://vpinhub.github.io/vpinhub-tv/live_status.json?t=' + Date.now());
                 const data = await r.json();
                 const isLive = data.live && data.live.length > 0;
 
-                ['nav-dot', 'nav-dot-mobile'].forEach(id => {
+                // Update all live dots
+                ['dot-desktop', 'dot-mobile-icon', 'dot-overlay'].forEach(id => {
                     const el = document.getElementById(id);
                     if (el) el.classList.toggle('is-live', isLive);
                 });
 
-                const btn = document.getElementById('tv-nav-btn');
-                btn.classList.toggle('is-live', isLive);
-
-                const labelText = isLive
+                // Desktop nav button
+                const navBtn = document.getElementById('tv-nav-btn');
+                navBtn.classList.toggle('is-live', isLive);
+                document.getElementById('label-desktop').textContent = isLive
                     ? `📺 ${data.live.length} Live`
                     : '📺 Watch';
 
-                document.getElementById('nav-label').textContent = labelText;
-                document.getElementById('nav-label-mobile').textContent = isLive
-                    ? `📺 VPinHub TV — ${data.live.length} Live Now`
-                    : '📺 VPinHub TV';
+                // Mobile icon button
+                document.getElementById('tv-mobile-icon-btn').classList.toggle('is-live', isLive);
+
             } catch {}
         }
 
