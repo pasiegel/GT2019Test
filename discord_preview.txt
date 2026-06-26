@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: JUNIPER FALLS (August 14, 2026) :trophy:
+:trophy: FINAL RESULTS: DUSTY BEND (June 25, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Juniper Falls** this week. We'll catch them next time!
+No scores were submitted for **Dusty Bend** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: DUSTY BEND :man_golfing:
-Navigate the dry creek beds and rugged terrain of Dusty Bend. The sun-baked ground offers plenty of extra distance, but controlling the bounce is incredibly difficult.
+:deciduous_tree: NEW WEEKLY CHALLENGE: CALYPSO KEY :man_golfing:
+Enjoy the pristine beaches and crystal-clear waters of Calypso Key. This tropical paradise looks relaxing, but the ocean breezes and island greens are anything but.
 
-:golf: Course:   Dusty Bend
+:golf: Course:   Calypso Key
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 2 · Week 3 of 6
-:alarm_clock: Deadline: Friday, June 26th @ 12:00 PM ET
+:calendar: Season:   Season 2 · Week 4 of 6
+:alarm_clock: Deadline: Friday, July 3rd @ 12:00 PM ET
 
-PRO-TIP: Take advantage of the firm fairways to gain extra rollout on your drives, but apply heavy backspin on your approaches.
+PRO-TIP: Coastal winds can be fierce, so club up and keep your shots low to pierce through the gusts coming off the water.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
