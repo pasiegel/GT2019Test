@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: CALYPSO KEY (June 26, 2026) :trophy:
+:trophy: FINAL RESULTS: SUMMIT LAKES (July 3, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Calypso Key** this week. We'll catch them next time!
+No scores were submitted for **Summit Lakes** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: SUMMIT LAKES :man_golfing:
-Breathe in the thin mountain air and enjoy the high elevation of Summit Lakes. The alpine views are incredible, and the ball flies forever in this mountain paradise.
+:deciduous_tree: NEW WEEKLY CHALLENGE: HIGHLAND LINKS :man_golfing:
+Test your skills against the traditional rolling dunes and deep bunkers of Highland Links. You will have to fight the wind every step of the way on this coastal gem.
 
-:golf: Course:   Summit Lakes
+:golf: Course:   Highland Links
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 2 · Week 5 of 6
-:alarm_clock: Deadline: Friday, July 10th @ 12:00 PM ET
+:calendar: Season:   Season 2 · Week 6 of 6
+:alarm_clock: Deadline: Friday, July 17th @ 12:00 PM ET
 
-PRO-TIP: Your ball will fly about ten percent further at this altitude, so be sure to club down on your approach shots.
+PRO-TIP: Play the bump-and-run on your approach shots to keep your ball out of the relentless Scottish winds.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
