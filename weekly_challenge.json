@@ -4,36 +4,10 @@
     "weeks_per_season": 6
   },
   "current_season": {
-    "number": 2,
-    "week": 6
+    "number": 3,
+    "week": 1
   },
-  "season_standings": {
-    "ed20910": {
-      "wins": 1,
-      "top3": 1,
-      "played": 1
-    },
-    "vpfiends": {
-      "wins": 0,
-      "top3": 1,
-      "played": 1
-    },
-    "Paladin242": {
-      "wins": 0,
-      "top3": 1,
-      "played": 1
-    },
-    "KeenCobra": {
-      "wins": 0,
-      "top3": 0,
-      "played": 1
-    },
-    "LynnInDenver": {
-      "wins": 0,
-      "top3": 0,
-      "played": 1
-    }
-  },
+  "season_standings": {},
   "seasons": [
     {
       "number": 1,
@@ -86,19 +60,62 @@
           "played": 2
         }
       }
+    },
+    {
+      "number": 2,
+      "weeks": 6,
+      "champion": "ed20910",
+      "standings": {
+        "ed20910": {
+          "wins": 1,
+          "top3": 1,
+          "played": 1
+        },
+        "vpfiends": {
+          "wins": 0,
+          "top3": 1,
+          "played": 1
+        },
+        "Paladin242": {
+          "wins": 0,
+          "top3": 1,
+          "played": 1
+        },
+        "KeenCobra": {
+          "wins": 0,
+          "top3": 0,
+          "played": 1
+        },
+        "LynnInDenver": {
+          "wins": 0,
+          "top3": 0,
+          "played": 1
+        }
+      }
     }
   ],
   "current": {
-    "course": "Highland Links",
+    "course": "Volcano Palms",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
-    "season": 2,
-    "season_week": 6,
-    "start": "2026-07-10T18:08:12",
-    "end": "2026-07-17T16:00:00",
-    "deadline_text": "Friday, July 17th @ 12:00 PM ET"
+    "season": 3,
+    "season_week": 1,
+    "start": "2026-07-17T17:34:28",
+    "end": "2026-07-24T16:00:00",
+    "deadline_text": "Friday, July 24th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-07-10",
+      "course": "Highland Links",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 2,
+      "season_week": 6,
+      "start": "2026-07-10T18:08:12",
+      "end": "2026-07-17T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-07-03",
       "course": "Summit Lakes",
@@ -885,6 +902,7 @@
     "Dusty Bend",
     "Calypso Key",
     "Summit Lakes",
-    "Highland Links"
+    "Highland Links",
+    "Volcano Palms"
   ]
 }

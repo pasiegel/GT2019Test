@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: SUMMIT LAKES (July 3, 2026) :trophy:
+:trophy: FINAL RESULTS: HIGHLAND LINKS (July 10, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Summit Lakes** this week. We'll catch them next time!
+No scores were submitted for **Highland Links** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: HIGHLAND LINKS :man_golfing:
-Test your skills against the traditional rolling dunes and deep bunkers of Highland Links. You will have to fight the wind every step of the way on this coastal gem.
+:deciduous_tree: NEW WEEKLY CHALLENGE: VOLCANO PALMS :man_golfing:
+Dodge the lava flows and palm trees of this explosive Hawaiian layout at Volcano Palms. The black rock hazards are just as punishing as the tropical winds.
 
-:golf: Course:   Highland Links
+:golf: Course:   Volcano Palms
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 2 · Week 6 of 6
-:alarm_clock: Deadline: Friday, July 17th @ 12:00 PM ET
+:calendar: Season:   Season 3 · Week 1 of 6
+:alarm_clock: Deadline: Friday, July 24th @ 12:00 PM ET
 
-PRO-TIP: Play the bump-and-run on your approach shots to keep your ball out of the relentless Scottish winds.
+PRO-TIP: Do not hit your ball into the lava, as it counts as an unplayable hazard and will instantly ruin your scorecard.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
