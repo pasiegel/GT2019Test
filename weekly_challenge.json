@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 3,
-    "week": 1
+    "week": 2
   },
   "season_standings": {},
   "seasons": [
@@ -95,16 +95,27 @@
     }
   ],
   "current": {
-    "course": "Volcano Palms",
+    "course": "Whispering Valley",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 3,
-    "season_week": 1,
-    "start": "2026-07-17T17:34:28",
-    "end": "2026-07-24T16:00:00",
-    "deadline_text": "Friday, July 24th @ 12:00 PM ET"
+    "season_week": 2,
+    "start": "2026-07-24T17:55:07",
+    "end": "2026-07-31T16:00:00",
+    "deadline_text": "Friday, July 31st @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-07-17",
+      "course": "Volcano Palms",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 3,
+      "season_week": 1,
+      "start": "2026-07-17T17:34:28",
+      "end": "2026-07-24T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-07-10",
       "course": "Highland Links",
@@ -903,6 +914,7 @@
     "Calypso Key",
     "Summit Lakes",
     "Highland Links",
-    "Volcano Palms"
+    "Volcano Palms",
+    "Whispering Valley"
   ]
 }

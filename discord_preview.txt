@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: HIGHLAND LINKS (July 10, 2026) :trophy:
+:trophy: FINAL RESULTS: VOLCANO PALMS (July 17, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Highland Links** this week. We'll catch them next time!
+No scores were submitted for **Volcano Palms** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: VOLCANO PALMS :man_golfing:
-Dodge the lava flows and palm trees of this explosive Hawaiian layout at Volcano Palms. The black rock hazards are just as punishing as the tropical winds.
+:deciduous_tree: NEW WEEKLY CHALLENGE: WHISPERING VALLEY :man_golfing:
+Battle the constant winds sweeping through the wide open spaces of Whispering Valley. With no trees to block the gusts, calculating drift is the name of the game here.
 
-:golf: Course:   Volcano Palms
+:golf: Course:   Whispering Valley
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 3 · Week 1 of 6
-:alarm_clock: Deadline: Friday, July 24th @ 12:00 PM ET
+:calendar: Season:   Season 3 · Week 2 of 6
+:alarm_clock: Deadline: Friday, July 31st @ 12:00 PM ET
 
-PRO-TIP: Do not hit your ball into the lava, as it counts as an unplayable hazard and will instantly ruin your scorecard.
+PRO-TIP: Without trees to block the wind, you must manually adjust your aim significantly for every single shot.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
