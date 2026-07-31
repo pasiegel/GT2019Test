@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: VOLCANO PALMS (July 17, 2026) :trophy:
+:trophy: FINAL RESULTS: WHISPERING VALLEY (July 24, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Volcano Palms** this week. We'll catch them next time!
+No scores were submitted for **Whispering Valley** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: WHISPERING VALLEY :man_golfing:
-Battle the constant winds sweeping through the wide open spaces of Whispering Valley. With no trees to block the gusts, calculating drift is the name of the game here.
+:deciduous_tree: NEW WEEKLY CHALLENGE: BELLA TOSCANA :man_golfing:
+Take a trip to the Italian wine country with the stunning rolling hills of Bella Toscana. Don't let the beautiful vineyards distract you from the severely sloped terrain.
 
-:golf: Course:   Whispering Valley
+:golf: Course:   Bella Toscana
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 3 · Week 2 of 6
-:alarm_clock: Deadline: Friday, July 31st @ 12:00 PM ET
+:calendar: Season:   Season 3 · Week 3 of 6
+:alarm_clock: Deadline: Friday, August 7th @ 12:00 PM ET
 
-PRO-TIP: Without trees to block the wind, you must manually adjust your aim significantly for every single shot.
+PRO-TIP: The greens are highly contoured, so make sure you aim for the correct tier to avoid impossible uphill putts.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly

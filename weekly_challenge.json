@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 3,
-    "week": 2
+    "week": 3
   },
   "season_standings": {},
   "seasons": [
@@ -95,16 +95,27 @@
     }
   ],
   "current": {
-    "course": "Whispering Valley",
+    "course": "Bella Toscana",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 3,
-    "season_week": 2,
-    "start": "2026-07-24T17:55:07",
-    "end": "2026-07-31T16:00:00",
-    "deadline_text": "Friday, July 31st @ 12:00 PM ET"
+    "season_week": 3,
+    "start": "2026-07-31T17:47:38",
+    "end": "2026-08-07T16:00:00",
+    "deadline_text": "Friday, August 7th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-07-24",
+      "course": "Whispering Valley",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 3,
+      "season_week": 2,
+      "start": "2026-07-24T17:55:07",
+      "end": "2026-07-31T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-07-17",
       "course": "Volcano Palms",
@@ -915,6 +926,7 @@
     "Summit Lakes",
     "Highland Links",
     "Volcano Palms",
-    "Whispering Valley"
+    "Whispering Valley",
+    "Bella Toscana"
   ]
 }
