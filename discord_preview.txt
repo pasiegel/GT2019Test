@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: BELLA TOSCANA (July 31, 2026) :trophy:
+:trophy: FINAL RESULTS: LAUREL PARK (August 7, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Bella Toscana** this week. We'll catch them next time!
+No scores were submitted for **Laurel Park** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: LAUREL PARK :man_golfing:
-Take a stroll through the manicured fairways and challenging doglegs of Laurel Park. This traditional country club layout rewards smart course management and precise shot shaping.
+:deciduous_tree: NEW WEEKLY CHALLENGE: CRAWDAD SWAMP :man_golfing:
+Watch your step in the muddy waters and thick Spanish moss of Crawdad Swamp. This murky southern layout requires a lot of carry, as the wet ground offers zero roll.
 
-:golf: Course:   Laurel Park
+:golf: Course:   Crawdad Swamp
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 3 · Week 4 of 6
-:alarm_clock: Deadline: Friday, August 14th @ 12:00 PM ET
+:calendar: Season:   Season 3 · Week 5 of 6
+:alarm_clock: Deadline: Friday, August 21st @ 12:00 PM ET
 
-PRO-TIP: Positioning off the tee is crucial here to ensure a clear shot past the large, strategically placed fairway bunkers.
+PRO-TIP: The soggy fairways will kill your roll instantly, so make sure you carry the ball all the way to your landing zone.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
