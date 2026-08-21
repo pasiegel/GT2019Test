@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: LAUREL PARK (August 7, 2026) :trophy:
+:trophy: FINAL RESULTS: CRAWDAD SWAMP (August 14, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Laurel Park** this week. We'll catch them next time!
+No scores were submitted for **Crawdad Swamp** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: CRAWDAD SWAMP :man_golfing:
-Watch your step in the muddy waters and thick Spanish moss of Crawdad Swamp. This murky southern layout requires a lot of carry, as the wet ground offers zero roll.
+:deciduous_tree: NEW WEEKLY CHALLENGE: CORAL VISTA :man_golfing:
+Welcome to a tropical paradise filled with ocean hazards at Coral Vista. The bright blue water is beautiful, but it will quickly ruin your round if you get too aggressive.
 
-:golf: Course:   Crawdad Swamp
+:golf: Course:   Coral Vista
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 3 · Week 5 of 6
-:alarm_clock: Deadline: Friday, August 21st @ 12:00 PM ET
+:calendar: Season:   Season 3 · Week 6 of 6
+:alarm_clock: Deadline: Friday, August 28th @ 12:00 PM ET
 
-PRO-TIP: The soggy fairways will kill your roll instantly, so make sure you carry the ball all the way to your landing zone.
+PRO-TIP: Watch out for the deceptive water inlets that cut right into the fairways, requiring precise carry distances.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly

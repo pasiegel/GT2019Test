@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 3,
-    "week": 5
+    "week": 6
   },
   "season_standings": {},
   "seasons": [
@@ -95,16 +95,27 @@
     }
   ],
   "current": {
-    "course": "Crawdad Swamp",
+    "course": "Coral Vista",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 3,
-    "season_week": 5,
-    "start": "2026-08-14T17:17:33",
-    "end": "2026-08-21T16:00:00",
-    "deadline_text": "Friday, August 21st @ 12:00 PM ET"
+    "season_week": 6,
+    "start": "2026-08-21T16:58:17",
+    "end": "2026-08-28T16:00:00",
+    "deadline_text": "Friday, August 28th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-08-14",
+      "course": "Crawdad Swamp",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 3,
+      "season_week": 5,
+      "start": "2026-08-14T17:17:33",
+      "end": "2026-08-21T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-08-07",
       "course": "Laurel Park",
@@ -951,6 +962,7 @@
     "Whispering Valley",
     "Bella Toscana",
     "Laurel Park",
-    "Crawdad Swamp"
+    "Crawdad Swamp",
+    "Coral Vista"
   ]
 }
