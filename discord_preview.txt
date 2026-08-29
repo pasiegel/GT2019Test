@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: CRAWDAD SWAMP (August 14, 2026) :trophy:
+:trophy: FINAL RESULTS: CORAL VISTA (August 21, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Crawdad Swamp** this week. We'll catch them next time!
+No scores were submitted for **Coral Vista** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: CORAL VISTA :man_golfing:
-Welcome to a tropical paradise filled with ocean hazards at Coral Vista. The bright blue water is beautiful, but it will quickly ruin your round if you get too aggressive.
+:deciduous_tree: NEW WEEKLY CHALLENGE: AUBURN GLEN :man_golfing:
+Experience the brilliant autumn foliage and challenging doglegs of Auburn Glen. The crisp fall weather provides a beautiful backdrop to a deceptively tricky woodland layout.
 
-:golf: Course:   Coral Vista
+:golf: Course:   Auburn Glen
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 3 · Week 6 of 6
-:alarm_clock: Deadline: Friday, August 28th @ 12:00 PM ET
+:calendar: Season:   Season 4 · Week 1 of 6
+:alarm_clock: Deadline: Friday, September 4th @ 12:00 PM ET
 
-PRO-TIP: Watch out for the deceptive water inlets that cut right into the fairways, requiring precise carry distances.
+PRO-TIP: Stay out of the thick fallen leaves and use the rolling fairway mounds to kick your ball safely toward the pin.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
