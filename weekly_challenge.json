@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 4,
-    "week": 1
+    "week": 2
   },
   "season_standings": {},
   "seasons": [
@@ -101,16 +101,27 @@
     }
   ],
   "current": {
-    "course": "Auburn Glen",
+    "course": "Greek Hills",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 4,
-    "season_week": 1,
-    "start": "2026-08-29T00:48:43",
-    "end": "2026-09-04T16:00:00",
-    "deadline_text": "Friday, September 4th @ 12:00 PM ET"
+    "season_week": 2,
+    "start": "2026-09-04T19:14:28",
+    "end": "2026-09-11T16:00:00",
+    "deadline_text": "Friday, September 11th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-08-29",
+      "course": "Auburn Glen",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 4,
+      "season_week": 1,
+      "start": "2026-08-29T00:48:43",
+      "end": "2026-09-04T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-08-21",
       "course": "Coral Vista",
@@ -981,6 +992,7 @@
     "Laurel Park",
     "Crawdad Swamp",
     "Coral Vista",
-    "Auburn Glen"
+    "Auburn Glen",
+    "Greek Hills"
   ]
 }

@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: CORAL VISTA (August 21, 2026) :trophy:
+:trophy: FINAL RESULTS: AUBURN GLEN (August 29, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Coral Vista** this week. We'll catch them next time!
+No scores were submitted for **Auburn Glen** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: AUBURN GLEN :man_golfing:
-Experience the brilliant autumn foliage and challenging doglegs of Auburn Glen. The crisp fall weather provides a beautiful backdrop to a deceptively tricky woodland layout.
+:deciduous_tree: NEW WEEKLY CHALLENGE: GREEK HILLS :man_golfing:
+Play among ancient ruins and stunning Mediterranean views at Greek Hills. The historic architecture and bright blue waters make this one of the most scenic challenges on the tour.
 
-:golf: Course:   Auburn Glen
+:golf: Course:   Greek Hills
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 4 · Week 1 of 6
-:alarm_clock: Deadline: Friday, September 4th @ 12:00 PM ET
+:calendar: Season:   Season 4 · Week 2 of 6
+:alarm_clock: Deadline: Friday, September 11th @ 12:00 PM ET
 
-PRO-TIP: Stay out of the thick fallen leaves and use the rolling fairway mounds to kick your ball safely toward the pin.
+PRO-TIP: Use the ancient stone structures to your advantage by intentionally banking tricky approach shots onto the green.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
