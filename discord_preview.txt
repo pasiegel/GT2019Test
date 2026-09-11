@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: AUBURN GLEN (August 29, 2026) :trophy:
+:trophy: FINAL RESULTS: GREEK HILLS (September 4, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Auburn Glen** this week. We'll catch them next time!
+No scores were submitted for **Greek Hills** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: GREEK HILLS :man_golfing:
-Play among ancient ruins and stunning Mediterranean views at Greek Hills. The historic architecture and bright blue waters make this one of the most scenic challenges on the tour.
+:deciduous_tree: NEW WEEKLY CHALLENGE: PINE MEADOW :man_golfing:
+Weave your way through the dense, traditional pine forests of Pine Meadow. The fairways are tight, and the massive trees will severely punish an inaccurate drive.
 
-:golf: Course:   Greek Hills
+:golf: Course:   Pine Meadow
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 4 · Week 2 of 6
-:alarm_clock: Deadline: Friday, September 11th @ 12:00 PM ET
+:calendar: Season:   Season 4 · Week 3 of 6
+:alarm_clock: Deadline: Friday, September 18th @ 12:00 PM ET
 
-PRO-TIP: Use the ancient stone structures to your advantage by intentionally banking tricky approach shots onto the green.
+PRO-TIP: Doglegs are abundant, so don't be afraid to hit a 3-wood off the tee to ensure you stay in the short grass.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
