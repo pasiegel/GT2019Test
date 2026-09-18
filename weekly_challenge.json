@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 4,
-    "week": 3
+    "week": 4
   },
   "season_standings": {},
   "seasons": [
@@ -101,16 +101,27 @@
     }
   ],
   "current": {
-    "course": "Pine Meadow",
+    "course": "Rocky Hollow",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 4,
-    "season_week": 3,
-    "start": "2026-09-11T19:24:47",
-    "end": "2026-09-18T16:00:00",
-    "deadline_text": "Friday, September 18th @ 12:00 PM ET"
+    "season_week": 4,
+    "start": "2026-09-18T19:17:30",
+    "end": "2026-09-25T16:00:00",
+    "deadline_text": "Friday, September 25th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-09-11",
+      "course": "Pine Meadow",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 4,
+      "season_week": 3,
+      "start": "2026-09-11T19:24:47",
+      "end": "2026-09-18T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-09-04",
       "course": "Greek Hills",
@@ -1005,6 +1016,7 @@
     "Coral Vista",
     "Auburn Glen",
     "Greek Hills",
-    "Pine Meadow"
+    "Pine Meadow",
+    "Rocky Hollow"
   ]
 }
