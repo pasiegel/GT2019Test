@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: PINE MEADOW (September 11, 2026) :trophy:
+:trophy: FINAL RESULTS: ROCKY HOLLOW (September 18, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Pine Meadow** this week. We'll catch them next time!
+No scores were submitted for **Rocky Hollow** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: ROCKY HOLLOW :man_golfing:
-Navigate the massive boulders and tricky canyon walls of Rocky Hollow. You'll need high loft and incredible accuracy to clear the stone obstacles scattered across this course.
+:deciduous_tree: NEW WEEKLY CHALLENGE: SEQUOIA GROVE :man_golfing:
+Feel tiny as you play your way through the massive redwood trees of Sequoia Grove. These ancient giants line the fairways, demanding intense shot-shaping skills.
 
-:golf: Course:   Rocky Hollow
+:golf: Course:   Sequoia Grove
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 4 · Week 4 of 6
-:alarm_clock: Deadline: Friday, September 25th @ 12:00 PM ET
+:calendar: Season:   Season 4 · Week 5 of 6
+:alarm_clock: Deadline: Friday, October 2nd @ 12:00 PM ET
 
-PRO-TIP: You can aggressively cut corners on the doglegs if you have enough loft to clear the massive canyon rocks.
+PRO-TIP: The giant redwood trees are impossible to hit over, so you must learn to expertly shape your shots around them.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
