@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: ROCKY HOLLOW (September 18, 2026) :trophy:
+:trophy: FINAL RESULTS: SEQUOIA GROVE (September 25, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Rocky Hollow** this week. We'll catch them next time!
+No scores were submitted for **Sequoia Grove** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: SEQUOIA GROVE :man_golfing:
-Feel tiny as you play your way through the massive redwood trees of Sequoia Grove. These ancient giants line the fairways, demanding intense shot-shaping skills.
+:deciduous_tree: NEW WEEKLY CHALLENGE: HEATHER POINTE :man_golfing:
+Tackle the thick purple heather and coastal winds of this classic Scottish links layout. The views are magnificent, but the rough is an absolute scorecard destroyer.
 
-:golf: Course:   Sequoia Grove
+:golf: Course:   Heather Pointe
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 4 · Week 5 of 6
-:alarm_clock: Deadline: Friday, October 2nd @ 12:00 PM ET
+:calendar: Season:   Season 4 · Week 6 of 6
+:alarm_clock: Deadline: Friday, October 9th @ 12:00 PM ET
 
-PRO-TIP: The giant redwood trees are impossible to hit over, so you must learn to expertly shape your shots around them.
+PRO-TIP: The native heather will swallow your ball completely, so keep your shots strictly in the short grass.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
