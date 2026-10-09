@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: SEQUOIA GROVE (September 25, 2026) :trophy:
+:trophy: FINAL RESULTS: HEATHER POINTE (October 2, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Sequoia Grove** this week. We'll catch them next time!
+No scores were submitted for **Heather Pointe** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: HEATHER POINTE :man_golfing:
-Tackle the thick purple heather and coastal winds of this classic Scottish links layout. The views are magnificent, but the rough is an absolute scorecard destroyer.
+:deciduous_tree: NEW WEEKLY CHALLENGE: PELICAN GROVE :man_golfing:
+Enjoy the sunny Florida vibes, complete with palm trees and abundant water hazards at Pelican Grove. The flat terrain means you won't get much extra distance from elevation.
 
-:golf: Course:   Heather Pointe
+:golf: Course:   Pelican Grove
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 4 · Week 6 of 6
-:alarm_clock: Deadline: Friday, October 9th @ 12:00 PM ET
+:calendar: Season:   Season 5 · Week 1 of 6
+:alarm_clock: Deadline: Friday, October 16th @ 12:00 PM ET
 
-PRO-TIP: The native heather will swallow your ball completely, so keep your shots strictly in the short grass.
+PRO-TIP: The sandy coastal soil means less rollout on your drives, so aim to carry the ball as far as possible off the tee.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly

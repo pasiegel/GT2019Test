@@ -4,8 +4,8 @@
     "weeks_per_season": 6
   },
   "current_season": {
-    "number": 4,
-    "week": 6
+    "number": 5,
+    "week": 1
   },
   "season_standings": {},
   "seasons": [
@@ -98,19 +98,36 @@
       "weeks": 6,
       "champion": null,
       "standings": {}
+    },
+    {
+      "number": 4,
+      "weeks": 6,
+      "champion": null,
+      "standings": {}
     }
   ],
   "current": {
-    "course": "Heather Pointe",
+    "course": "Pelican Grove",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
-    "season": 4,
-    "season_week": 6,
-    "start": "2026-10-02T20:44:04",
-    "end": "2026-10-09T16:00:00",
-    "deadline_text": "Friday, October 9th @ 12:00 PM ET"
+    "season": 5,
+    "season_week": 1,
+    "start": "2026-10-09T21:04:40",
+    "end": "2026-10-16T16:00:00",
+    "deadline_text": "Friday, October 16th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-10-02",
+      "course": "Heather Pointe",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 4,
+      "season_week": 6,
+      "start": "2026-10-02T20:44:04",
+      "end": "2026-10-09T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-09-25",
       "course": "Sequoia Grove",
@@ -1041,6 +1058,7 @@
     "Pine Meadow",
     "Rocky Hollow",
     "Sequoia Grove",
-    "Heather Pointe"
+    "Heather Pointe",
+    "Pelican Grove"
   ]
 }
