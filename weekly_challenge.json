@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 5,
-    "week": 1
+    "week": 2
   },
   "season_standings": {},
   "seasons": [
@@ -107,16 +107,27 @@
     }
   ],
   "current": {
-    "course": "Pelican Grove",
+    "course": "Rhineland",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 5,
-    "season_week": 1,
-    "start": "2026-10-09T21:04:40",
-    "end": "2026-10-16T16:00:00",
-    "deadline_text": "Friday, October 16th @ 12:00 PM ET"
+    "season_week": 2,
+    "start": "2026-10-16T19:39:05",
+    "end": "2026-10-23T16:00:00",
+    "deadline_text": "Friday, October 23rd @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-10-09",
+      "course": "Pelican Grove",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 5,
+      "season_week": 1,
+      "start": "2026-10-09T21:04:40",
+      "end": "2026-10-16T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-10-02",
       "course": "Heather Pointe",
@@ -1059,6 +1070,7 @@
     "Rocky Hollow",
     "Sequoia Grove",
     "Heather Pointe",
-    "Pelican Grove"
+    "Pelican Grove",
+    "Rhineland"
   ]
 }

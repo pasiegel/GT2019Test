@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: HEATHER POINTE (October 2, 2026) :trophy:
+:trophy: FINAL RESULTS: PELICAN GROVE (October 9, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Heather Pointe** this week. We'll catch them next time!
+No scores were submitted for **Pelican Grove** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: PELICAN GROVE :man_golfing:
-Enjoy the sunny Florida vibes, complete with palm trees and abundant water hazards at Pelican Grove. The flat terrain means you won't get much extra distance from elevation.
+:deciduous_tree: NEW WEEKLY CHALLENGE: RHINELAND :man_golfing:
+Tee off in the shadow of majestic German castles at Rhineland. The lush green fairways and river hazards provide a regal but demanding test of golf.
 
-:golf: Course:   Pelican Grove
+:golf: Course:   Rhineland
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 5 · Week 1 of 6
-:alarm_clock: Deadline: Friday, October 16th @ 12:00 PM ET
+:calendar: Season:   Season 5 · Week 2 of 6
+:alarm_clock: Deadline: Friday, October 23rd @ 12:00 PM ET
 
-PRO-TIP: The sandy coastal soil means less rollout on your drives, so aim to carry the ball as far as possible off the tee.
+PRO-TIP: Use the banking terrain on the hillsides to funnel your ball towards the heavily guarded pins.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
