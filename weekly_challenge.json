@@ -5,9 +5,25 @@
   },
   "current_season": {
     "number": 5,
-    "week": 2
+    "week": 3
   },
-  "season_standings": {},
+  "season_standings": {
+    "ed20910": {
+      "wins": 1,
+      "top3": 1,
+      "played": 1
+    },
+    "vpfiends": {
+      "wins": 0,
+      "top3": 1,
+      "played": 1
+    },
+    "Paladin242": {
+      "wins": 0,
+      "top3": 1,
+      "played": 1
+    }
+  },
   "seasons": [
     {
       "number": 1,
@@ -107,16 +123,49 @@
     }
   ],
   "current": {
-    "course": "Rhineland",
+    "course": "Rattlesnake Ridge",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 5,
-    "season_week": 2,
-    "start": "2026-10-16T19:39:05",
-    "end": "2026-10-23T16:00:00",
-    "deadline_text": "Friday, October 23rd @ 12:00 PM ET"
+    "season_week": 3,
+    "start": "2026-10-23T20:16:58",
+    "end": "2026-10-30T16:00:00",
+    "deadline_text": "Friday, October 30th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-10-16",
+      "course": "Rhineland",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 5,
+      "season_week": 2,
+      "start": "2026-10-16T19:39:05",
+      "end": "2026-10-23T16:00:00",
+      "results": [
+        {
+          "rank": 1,
+          "player": "ed20910",
+          "score_vs_par": "-21",
+          "total_score": "51",
+          "date": "Oct 18"
+        },
+        {
+          "rank": 2,
+          "player": "vpfiends",
+          "score_vs_par": "-20",
+          "total_score": "52",
+          "date": "Oct 18"
+        },
+        {
+          "rank": 3,
+          "player": "Paladin242",
+          "score_vs_par": "E",
+          "total_score": "72",
+          "date": "Oct 20"
+        }
+      ],
+      "winner": "ed20910"
+    },
     {
       "week_start": "2026-10-09",
       "course": "Pelican Grove",
@@ -1001,18 +1050,18 @@
   "standings": {
     "vpfiends": {
       "wins": 7,
-      "top3": 14,
-      "played": 15
+      "top3": 15,
+      "played": 16
     },
     "ed20910": {
-      "wins": 5,
-      "top3": 12,
-      "played": 15
+      "wins": 6,
+      "top3": 13,
+      "played": 16
     },
     "Paladin242": {
       "wins": 2,
-      "top3": 10,
-      "played": 14
+      "top3": 11,
+      "played": 15
     },
     "KeenCobra": {
       "wins": 1,
@@ -1071,6 +1120,7 @@
     "Sequoia Grove",
     "Heather Pointe",
     "Pelican Grove",
-    "Rhineland"
+    "Rhineland",
+    "Rattlesnake Ridge"
   ]
 }
