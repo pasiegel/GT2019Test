@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: MYSTIC HILLS (October 30, 2026) :trophy:
+:trophy: FINAL RESULTS: TAHITI COVE (November 6, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Mystic Hills** this week. We'll catch them next time!
+No scores were submitted for **Tahiti Cove** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: TAHITI COVE :man_golfing:
-Soak in the bright South Pacific waters and tropical beauty of Tahiti Cove. The island greens are mesmerizing, but the ocean crosswinds are waiting to ruin your scorecard.
+:deciduous_tree: NEW WEEKLY CHALLENGE: CUMBERLAND :man_golfing:
+Enjoy a traditional parkland experience surrounded by towering, dense forests at Cumberland. Staying in the fairway is your only hope of shooting under par on this classic layout.
 
-:golf: Course:   Tahiti Cove
+:golf: Course:   Cumberland
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 5 · Week 5 of 6
-:alarm_clock: Deadline: Friday, November 13th @ 12:00 PM ET
+:calendar: Season:   Season 5 · Week 6 of 6
+:alarm_clock: Deadline: Friday, November 20th @ 12:00 PM ET
 
-PRO-TIP: The island greens require pinpoint accuracy and a perfect read on the sweeping coastal winds.
+PRO-TIP: Shape your shots around the massive oak trees to give yourself a clear, unobstructed look at the pin.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
