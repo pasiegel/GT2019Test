@@ -4,26 +4,10 @@
     "weeks_per_season": 6
   },
   "current_season": {
-    "number": 5,
-    "week": 6
+    "number": 6,
+    "week": 1
   },
-  "season_standings": {
-    "ed20910": {
-      "wins": 1,
-      "top3": 1,
-      "played": 1
-    },
-    "vpfiends": {
-      "wins": 0,
-      "top3": 1,
-      "played": 1
-    },
-    "Paladin242": {
-      "wins": 0,
-      "top3": 1,
-      "played": 1
-    }
-  },
+  "season_standings": {},
   "seasons": [
     {
       "number": 1,
@@ -120,19 +104,52 @@
       "weeks": 6,
       "champion": null,
       "standings": {}
+    },
+    {
+      "number": 5,
+      "weeks": 6,
+      "champion": "ed20910",
+      "standings": {
+        "ed20910": {
+          "wins": 1,
+          "top3": 1,
+          "played": 1
+        },
+        "vpfiends": {
+          "wins": 0,
+          "top3": 1,
+          "played": 1
+        },
+        "Paladin242": {
+          "wins": 0,
+          "top3": 1,
+          "played": 1
+        }
+      }
     }
   ],
   "current": {
-    "course": "Cumberland",
+    "course": "Jack Rabbit Junction",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
-    "season": 5,
-    "season_week": 6,
-    "start": "2026-11-13T22:17:21",
-    "end": "2026-11-20T16:00:00",
-    "deadline_text": "Friday, November 20th @ 12:00 PM ET"
+    "season": 6,
+    "season_week": 1,
+    "start": "2026-11-20T23:00:21",
+    "end": "2026-11-27T16:00:00",
+    "deadline_text": "Friday, November 27th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-11-13",
+      "course": "Cumberland",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 5,
+      "season_week": 6,
+      "start": "2026-11-13T22:17:21",
+      "end": "2026-11-20T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-11-06",
       "course": "Tahiti Cove",
@@ -1157,6 +1174,7 @@
     "Rattlesnake Ridge",
     "Mystic Hills",
     "Tahiti Cove",
-    "Cumberland"
+    "Cumberland",
+    "Jack Rabbit Junction"
   ]
 }
