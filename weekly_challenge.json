@@ -5,7 +5,7 @@
   },
   "current_season": {
     "number": 6,
-    "week": 1
+    "week": 2
   },
   "season_standings": {},
   "seasons": [
@@ -129,16 +129,27 @@
     }
   ],
   "current": {
-    "course": "Jack Rabbit Junction",
+    "course": "Teal Gardens",
     "game": "Golden Tee Unplugged 2019",
     "game_year": "2019",
     "season": 6,
-    "season_week": 1,
-    "start": "2026-11-20T23:00:21",
-    "end": "2026-11-27T16:00:00",
-    "deadline_text": "Friday, November 27th @ 12:00 PM ET"
+    "season_week": 2,
+    "start": "2026-11-28T00:24:12",
+    "end": "2026-12-04T16:00:00",
+    "deadline_text": "Friday, December 4th @ 12:00 PM ET"
   },
   "history": [
+    {
+      "week_start": "2026-11-20",
+      "course": "Jack Rabbit Junction",
+      "game": "Golden Tee Unplugged 2019",
+      "season": 6,
+      "season_week": 1,
+      "start": "2026-11-20T23:00:21",
+      "end": "2026-11-27T16:00:00",
+      "results": [],
+      "winner": null
+    },
     {
       "week_start": "2026-11-13",
       "course": "Cumberland",
@@ -1175,6 +1186,7 @@
     "Mystic Hills",
     "Tahiti Cove",
     "Cumberland",
-    "Jack Rabbit Junction"
+    "Jack Rabbit Junction",
+    "Teal Gardens"
   ]
 }

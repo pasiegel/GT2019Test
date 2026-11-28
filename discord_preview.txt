@@ -1,17 +1,17 @@
-:trophy: FINAL RESULTS: CUMBERLAND (November 13, 2026) :trophy:
+:trophy: FINAL RESULTS: JACK RABBIT JUNCTION (November 20, 2026) :trophy:
 The week is up, the dust has settled on the fairways, and the final scores are officially locked in.
 
-No scores were submitted for **Cumberland** this week. We'll catch them next time!
+No scores were submitted for **Jack Rabbit Junction** this week. We'll catch them next time!
 
-:deciduous_tree: NEW WEEKLY CHALLENGE: JACK RABBIT JUNCTION :man_golfing:
-Avoid the sprawling desert brush and dry ravines of Jack Rabbit Junction. The arid climate makes the greens lightning fast, demanding soft hands on your approach shots.
+:deciduous_tree: NEW WEEKLY CHALLENGE: TEAL GARDENS :man_golfing:
+Find your zen among the Asian-inspired ponds and bamboo forests of Teal Gardens. This tranquil layout demands precise iron play to navigate the stunning water features.
 
-:golf: Course:   Jack Rabbit Junction
+:golf: Course:   Teal Gardens
 :video_game: Game:     Golden Tee Unplugged 2019
-:calendar: Season:   Season 6 · Week 1 of 6
-:alarm_clock: Deadline: Friday, November 27th @ 12:00 PM ET
+:calendar: Season:   Season 6 · Week 2 of 6
+:alarm_clock: Deadline: Friday, December 4th @ 12:00 PM ET
 
-PRO-TIP: The greens are firm and fast, so use high-lofted clubs with plenty of backspin to land the ball softly.
+PRO-TIP: The bamboo shoots are incredibly dense, so keep your ball strictly in the fairway to maintain a clear line of sight to the pin.
 
 :bar_chart: View the Live Leaderboard:
 https://vpinhub.github.io/gt/#weekly
